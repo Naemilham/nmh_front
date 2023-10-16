@@ -9,48 +9,53 @@ const SignInPage = () => {
     console.log(id, pw);
   };
   return (
-    <div className="w-screen h-screen flex justify-center bg-zinc-400">
-      <div className="w-1/2 h-full flex flex-col justify-center items-center gap-10">
-        <p className="text-2xl">내밀함</p>
-        <input
-          required
-          type="text"
-          id="username"
-          className="input w-80 h-10"
-          placeholder="id"
-          onChange={(e) => setId(e.target.value)}
-        />
-        <input
-          required
-          type="text"
-          id="username"
-          className="input w-80 h-10"
-          placeholder="pw"
-          onChange={(e) => setPw(e.target.value)}
-        />
+    <div className="w-screen h-screen flex justify-center bg-[#F2F3F8]">
+      <div className="w-1/2 h-full flex flex-col justify-normal items-center gap-10 pt-20">
+        <img src={require("../assets/images/nmhIcon.png")} className="w-1/14 h-1/10"/>
+        <p className="font-['DM_Sans'] text-5xl font-bold">내밀함</p>
+        <div className="w-3/4 pt-10">
+          <p className="font-['DM_Sans'] text-2xl font-bold text-[#777E90] pb-2">
+            아이디
+          </p>
+          <input
+            required
+            type="text"
+            id="username"
+            className="input w-full h-16 rounded-lg border-[1.5px] border-[#777E90]"
+            onChange={(e) => setId(e.target.value)}
+          />
+        </div>
+        
+        <div className="w-3/4 pb-10">
+          <p className="font-['DM_Sans'] text-2xl font-bold text-[#777E90] pb-2">
+            비밀번호
+          </p>
+          <input
+            required
+            type="text"
+            id="username"
+            className="input w-full h-16 rounded-lg border-[1.5px] border-[#777E90]"
+            onChange={(e) => setPw(e.target.value)}
+          />
+        </div>
+
         <button
-          className="w-40 h-10 bg-white"
+          className="w-2/5 h-16 bg-black rounded-lg drop-shadow-md"
           onClick={(e) => {
             login();
           }}
         >
-          로그인
+          <p className="text-white font-['DM_Sans'] text-2xl font-bold">로그인</p>
         </button>
+        
         <p
-          className="text-sm"
+          className="font-['DM_Sans'] text-lg font-bold text-[#777E90] drop-shadow-md"
           onClick={(e) => {
             navigate("/signup");
           }}
         >
-          회원가입 회원가입
+           내밀함에 처음 방문하셨나요? 지금 회원가입 해보세요!
         </p>
-        <hr className="w-80" />
-        <div className="flex justify-center gap-1">
-          <button className="w-20 h-20 bg-red-600"> google </button>
-          <button className="w-20 h-20 bg-red-600"> google </button>
-          <button className="w-20 h-20 bg-red-600"> google </button>
-          <button className="w-20 h-20 bg-red-600"> google </button>
-        </div>
       </div>
     </div>
   );
