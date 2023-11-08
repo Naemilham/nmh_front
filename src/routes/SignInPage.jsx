@@ -5,7 +5,7 @@ const SignInPage = () => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
-
+  const [pwVisible, setPwVisible] = useState(false);
   const login = () => {
     console.log(id, pw);
   };
@@ -35,13 +35,25 @@ const SignInPage = () => {
         <div className="w-3/5 flex border-b border-[#777E90]">
           <input
             required
-            type="text"
+            type={pwVisible ? "text" : "password"}
             id="username"
             placeholder="비밀번호"
             className="input w-full h-12 rounded-lg text-[#00000070]"
             onChange={(e) => setId(e.target.value)}
           />
-          <img src={require("../assets/images/invisibleIcon.png")} className="w-[40px] h-[40px]"></img>
+          {
+            pwVisible ? 
+            <img  
+              src={require("../assets/images/visibleIcon.png")}
+              className="w-[38px] h-[32px] pt-[8px]"
+              onClick={(e) => setPwVisible(!pwVisible)}
+            ></img> :
+            <img  
+              src={require("../assets/images/invisibleIcon.png")}
+              className="w-[40px] h-[40px]"
+              onClick={(e) => setPwVisible(!pwVisible)}
+            ></img>
+          }
         </div>
 
         <div className="pt-10">
