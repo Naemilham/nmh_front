@@ -9,6 +9,10 @@ const SignUpPage = () => {
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
 
+  const [pwVisible, setPwVisible] = useState(false);
+  const [pwVerificationVisible, setPwVerificationVisible] = useState(false);
+
+
   const login = () => {
     console.log(id, pw);
   };
@@ -18,8 +22,8 @@ const SignUpPage = () => {
   }
   
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
-      <div className="overflow-y-scroll no-scrollbar w-[760px] h-[730px] bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-16">
+    <div className="w-full h-[1000px] flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
+      <div className="w-[760px] h-[900px] bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-16">
         <div className="flex flex-col justify-normal items-center gap-5 pt-10">
           <p className="font-sans text-5xl font-bold text-[#80BBF7]">내밀함</p>
           <p className="font-sans font-normal text-xl text-[#00000099]">우리가 공유하는 가장 진솔한 이야기</p>
@@ -72,25 +76,49 @@ const SignUpPage = () => {
           <div className="w-3/5 flex border-b border-[#777E90]">
             <input
               required
-              type="text"
+              type={pwVisible ? "text" : "password"}
               id="password"
               placeholder="비밀번호"
               className="input w-full h-12 rounded-lg text-[#00000070]"
               onChange={(e) => setPw(e.target.value)}
             />
-            <img src={require("../assets/images/invisibleIcon.png")} className="w-[40px] h-[40px]"></img>
+            {
+              pwVisible ? 
+              <img  
+                src={require("../assets/images/visibleIcon.png")}
+                className="w-[38px] h-[32px] pt-[8px]"
+                onClick={(e) => setPwVisible(!pwVisible)}
+              ></img> :
+              <img  
+                src={require("../assets/images/invisibleIcon.png")}
+                className="w-[40px] h-[40px]"
+                onClick={(e) => setPwVisible(!pwVisible)}
+              ></img>
+            }
           </div>
 
           <div className="w-3/5 flex border-b border-[#777E90]">
             <input
               required
-              type="text"
+              type={pwVerificationVisible ? "text" : "password"}
               id="passwordVerification"
               placeholder="비밀번호 확인"
               className="input w-full h-12 rounded-lg text-[#00000070]" 
               onChange={(e) => setPwVerification(e.target.value)}
             />
-            <img src={require("../assets/images/invisibleIcon.png")} className="w-[40px] h-[40px]"></img>
+            {
+              pwVerificationVisible ? 
+              <img  
+                src={require("../assets/images/visibleIcon.png")}
+                className="w-[38px] h-[32px] pt-[8px]"
+                onClick={(e) => setPwVerificationVisible(!pwVerificationVisible)}
+              ></img> :
+              <img  
+                src={require("../assets/images/invisibleIcon.png")}
+                className="w-[40px] h-[40px]"
+                onClick={(e) => setPwVerificationVisible(!pwVerificationVisible)}
+              ></img>
+            }  
           </div>
           
           <div className="flex flex-col gap-3">
