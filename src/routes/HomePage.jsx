@@ -5,9 +5,8 @@ import { Carousel } from "@material-tailwind/react";
 const HomePage = () => {
   const navigate = useNavigate();
   const images = [
-    'https://images.pexels.com/photos/18845325/pexels-photo-18845325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    'https://images.pexels.com/photos/18783672/pexels-photo-18783672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    'https://images.pexels.com/photos/18729063/pexels-photo-18729063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    require("../assets/images/carousel1.png"),
+    require("../assets/images/carousel2.png"),
   ]
 
   return (
@@ -32,10 +31,10 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="w-full h-[500px] bg-[#DCECFF] flex flex-row justify-center">
-        <Carousel autoplay={true} loop={true} className="w-2/3 h-[500px]">
+      <div className="w-full h-[600px] bg-gray-500 flex flex-row justify-center">
+        <Carousel autoplay={true} loop={true} className="h-full">
           {images.map((img) => (
-            <div className="w-full h-full bg-green-300 flex flex-row justify-center">
+            <div className="w-full h-full flex flex-row justify-center">
               <img src={img} className="object-contain"/>
             </div>
           ))}
