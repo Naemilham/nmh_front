@@ -8,7 +8,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -23,11 +23,18 @@ code {
       display: none;
     }
 
-
     /* Hide scrollbar for IE, Edge, and Firefox */
     .no-scrollbar {
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
     }
   }
+}
+
+.button-a {
+  @apply bg-nemil-sky border border-nemil-blue text-nemil-blue font-semibold hover:text-black rounded-xl text-lg drop-shadow-md py-2.5 px-2;
+}
+
+.vertical-text {
+  writing-mode: vertical-lr;
 }
