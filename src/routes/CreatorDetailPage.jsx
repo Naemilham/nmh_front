@@ -1,7 +1,9 @@
+import { Carousel } from "@material-tailwind/react";
+
 const CreatorDetailPage = () => {
 	return (
-		<div>여기는 CreatorDetailPage!</div>
-	);
+		<div></div>
+	  );
 };
 
 export default CreatorDetailPage;
