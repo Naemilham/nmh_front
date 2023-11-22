@@ -11,16 +11,16 @@ const SignInPage = () => {
   };
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
-      <div className="w-[760px] h-[730px] bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-10 pt-20">
-        <div className="w-[144px] h-[144px] absolute top-[-83.5px] bg-[#EDF5FE] opacity-75 rounded-full shadow "></div>
-        <img src={require("../assets/images/nmhIcon-yellow.png")} className="w-[80px] h-[55px] absolute top-[-38px]"/>
+      <div className="w-2/5 h-7/10 bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-10 pt-20">
+        <div className="w-1/6 h-1/5 absolute -top-16 bg-[#EDF5FE] opacity-75 rounded-full shadow "></div>
+        <img src={require("../assets/images/nmhIcon-yellow.png")} className="w-[9%] h-[7%] absolute -top-6"/>
         
-        <div className="flex flex-col justify-normal items-center gap-5 pt-8">
+        <div className="flex flex-col justify-normal items-center gap-5 pt-2">
           <p className="font-sans text-5xl font-bold text-[#80BBF7]">내밀함</p>
-          <p className="font-sans font-normal text-xl text-[#00000099]">우리가 공유하는 가장 진솔한 이야기</p>
+          <p className="font-sans font-normal text-lg text-[#00000099]">우리가 공유하는 가장 진솔한 이야기</p>
         </div>
         
-        <div className="w-3/5 flex border-b border-[#777E90] pt-10">
+        <div className="w-3/5 flex border-b border-[#777E90] pt-5">
           <input
             required
             type="text"
@@ -56,7 +56,7 @@ const SignInPage = () => {
           }
         </div>
 
-        <div className="pt-10">
+        <div className="pt-10 pb-12">
           <button
             className="w-full h-16 bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
             onClick={(e) => {
