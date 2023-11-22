@@ -69,25 +69,25 @@ const MailCreatePage = () => {
       <div className="w-full h-full flex flex-row justify-stretch">
         <div className="w-full h-full flex flex-row justify-center items-center">
           {/*tag*/}
-          <div className="flex flex-col justify-end">
+          <div className="flex flex-col justify-end"> 
             <div className="flex flex-col mb-6">
               <div class="w-14 h-[23px]  bg-sky-600 drop-shadow-md"></div>
               <div className="w-14 h-28 border bg-white vertical-text text-center text-lg font-bold pl-2 text-sky-600 drop-shadow-md">
                 둘러보기
               </div>
             </div>
-            <div className="flex flex-col ml-2 mb-6">
-              <div class="w-12 h-[23px]  bg-[#4694F0] drop-shadow-md"></div>
+            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
+              <div class="w-12 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-2"></div>
               <div 
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-bold pl-2 text-[#4694F0] drop-shadow-md"
+                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-bold pl-2 text-[#4694F0] drop-shadow-md translate-x-2"
                 onClick={(e) => {navigate("/subscribelist")}}
               >
                 나의 작가
               </div>
             </div>
-            <div className="flex flex-col ml-2 mb-6">
-              <div class="w-12 h-[23px]  bg-[#4694F0] drop-shadow-md"></div>
-              <div className="w-12 h-28 border bg-white vertical-text text-center text-lg font-bold pl-2 text-[#4694F0] drop-shadow-md">
+            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
+              <div class="w-12 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-2"></div>
+              <div className="w-12 h-28 border bg-white vertical-text text-center text-lg font-bold pl-2 text-[#4694F0] drop-shadow-md translate-x-2">
                 나의 정보
               </div>
             </div>
