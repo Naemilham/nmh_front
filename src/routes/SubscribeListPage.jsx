@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 const MailCreatePage = () => {
   const navigate = useNavigate();
 
+  const colors = ["#FFF1BF", "#DCECFF", "#E3DFFD"];
+  const borderColors = ["#F5D151D1", "#0078F0", "#932ED0D1"];
+
   const [subscribeInfo, setSuvscribeInfo] = useState([
     {
       name: "CA피바라",
@@ -72,11 +75,11 @@ const MailCreatePage = () => {
             <div className="w-11/12 h-12 bg-gray-200 rounded-lg text-[#5C5C5C] text-lg flex justify-center items-center">
                 구독 중인 보내는 이들의 목록을 확인하고, 구독 여부를 변경할 수 있습니다.
             </div>
-            <div className="w-[90%] h-[480px] pb-8 overflow-y-scroll grid grid-cols-3 auto-rows-[70%] place-items-center gap-y-10">
+            <div className="w-[90%] h-[480px] pb-8 overflow-y-scroll grid grid-cols-3 auto-rows-[90%] place-items-center gap-y-10">
                 {
-                  subscribeInfo.map((info) => (
+                  subscribeInfo.map((info, idx) => (
                     <div className="w-[90%] h-full bg-white rounded-xl drop-shadow-xl">
-                      <div className="w-full h-3/5 bg-gray-200 rounded-t-xl flex justify-center items-center">
+                      <div className={`w-full h-3/5 rounded-t-xl bg-[${colors[idx%3]}] flex justify-center items-center`}>
                         <img className="h-4/5" src={info.image}/>
                       </div>
                       <div className="w-full h-2/5 flex flex-col justify-center px-3">
@@ -89,13 +92,13 @@ const MailCreatePage = () => {
                         <div className="h-2/5 mt-2 flex flex-row justify-between items-end">
                             <img 
                                 src={require("../assets/images/unsubscribe.png")}
-                                className="w-[13%] h-4/5"
+                                className="w-[15%] h-4/5"
                                 onClick={()=>{
                                     alert("물어보는 창");
                                 }}
                             />
                             <button 
-                                className="w-2/5 h-full bg-gray-200 rounded-xl border-2 border-gray-400 self-end text-lg text-[#00000099] font-bold"
+                                className={`w-2/5 h-full bg-[${colors[idx%3]}] rounded-xl border-2 border-[${borderColors[idx%3]}] self-end text-lg text-[#00000099] font-bold`}
                                 onClick={()=>{
                                     alert("모달");
                                 }}

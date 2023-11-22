@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 const MailCreatePage = () => {
   const navigate = useNavigate();
 
+  const colors = ["#FFF1BF", "#DCECFF", "#E3DFFD"];
+  const borderColors = ["#F5D151D1", "#0078F0", "#932ED0D1"];
+
   const [writerInfo, setWriterInfo] = useState([
     {
       name: "CA피바라",
@@ -97,11 +100,11 @@ const MailCreatePage = () => {
             <div className="w-11/12 h-12 bg-gray-200 rounded-lg text-[#5C5C5C] text-lg flex justify-center items-center">
               내밀함에서 활동하는 모든 보내는 이들을 만나보세요!  관심있는 보내는 이들을 더 알아보고, 메일링을 구독할 수도 있어요.
             </div>
-            <div className="w-[90%] h-[480px] pb-8 overflow-y-scroll grid grid-cols-3 auto-rows-[70%] place-items-center gap-y-10">
+            <div className="w-[90%] h-[480px] pb-8 overflow-y-scroll grid grid-cols-3 auto-rows-[90%] place-items-center gap-y-10">
                 {
-                  writerInfo.map((info) => (
+                  writerInfo.map((info, idx) => (
                     <div className="w-[90%] h-full bg-white rounded-xl drop-shadow-xl">
-                      <div className="w-full h-3/5 bg-gray-200 rounded-t-xl flex justify-center items-center">
+                      <div className={`w-full h-3/5 rounded-t-xl bg-[${colors[idx%3]}] flex justify-center items-center`}>
                         <img className="h-4/5" src={info.image}/>
                       </div>
                       <div className="w-full h-2/5 flex flex-col justify-center px-3">
@@ -112,7 +115,7 @@ const MailCreatePage = () => {
                           {info.description}
                         </div>
                         <button 
-                          className="w-2/5 h-2/5 mt-2 bg-gray-200 rounded-xl border-2 border-gray-400 self-end text-lg text-[#00000099] font-bold"
+                          className={`w-2/5 h-2/5 mt-2 bg-[${colors[idx%3]}] rounded-xl border-2 border-[${borderColors[idx%3]}] self-end text-lg text-[#00000099] font-bold`}
                           onClick={()=>{
                             alert("모달");
                           }}
