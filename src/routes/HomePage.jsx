@@ -31,8 +31,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="w-full h-[600px] bg-gray-500 flex flex-row justify-center">
-        <Carousel autoplay={true} loop={true} className="h-full">
+      <div className="w-full flex flex-row justify-center">
+        <Carousel autoplay={true} loop={true} className="w-full">
           {images.map((img) => (
             <div className="w-full h-full flex flex-row justify-center">
               <img src={img} className="object-contain"/>
