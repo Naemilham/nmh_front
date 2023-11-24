@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp } from "../api/api";
-import { useState } from "react";
-
 
 /* const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -22,8 +20,6 @@ import { useState } from "react";
     signUp(formData);
     alert("회원가입이 완료되었습니다!");
   }; */
-
-
 
 const SignUpPage = () => {
   const navigate = useNavigate();
