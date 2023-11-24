@@ -12,6 +12,8 @@ import SubScribeManagePage from "./routes/SubscribeManagePage";
 import WriterListPage from "./routes/WriterListPage"
 import SubscribeListPage from "./routes/SubscribeListPage"
 
+import ModalTestPage from "./routes/ModalTestPage"
+
 function App() {
   return (
     <div className="app">
@@ -29,6 +31,7 @@ function App() {
           <Route path="/submanage" element={<SubScribeManagePage />} />
           <Route path="/writerlist" element={<WriterListPage />} />
           <Route path="/subscribelist" element={<SubscribeListPage />} />
+          <Route path="/modaltestpage" element={<ModalTestPage />} />
         </Routes>
       </BrowserRouter> 
     </div>

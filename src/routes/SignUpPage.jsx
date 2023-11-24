@@ -23,7 +23,7 @@ const SignUpPage = () => {
   
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
-      <div className="w-2/5 h-[90%] bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-8">  
+      <div className="w-2/5 h-11/12 bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-8">  
         <div className="flex flex-col justify-normal items-center gap-5 pt-10">
           <p className="font-sans text-4xl font-bold text-[#80BBF7]">내밀함</p>
           <p className="font-sans font-normal text-lg text-[#00000099]">우리가 공유하는 가장 진솔한 이야기</p>
