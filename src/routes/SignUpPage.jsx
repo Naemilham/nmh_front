@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signUp } from "../api/api";
-
-/* const SignUpPage = () => {
+/*import { signUp } from "../api/api";
+const SignUpPage = () => {
   const [formData, setFormData] = useState({
     email: "",
     username: "",
