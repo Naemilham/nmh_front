@@ -1,5 +1,24 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+/*import { signUp } from "../api/api";
+const SignUpPage = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    username: "",
+    password: "",
+    confirm_password: "",
+  });
+
+  const handleFormData = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSignUpSubmit = (e) => {
+    e.preventDefault();
+    signUp(formData);
+    alert("회원가입이 완료되었습니다!");
+  }; */
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -12,23 +31,24 @@ const SignUpPage = () => {
   const [pwVisible, setPwVisible] = useState(false);
   const [pwVerificationVisible, setPwVerificationVisible] = useState(false);
 
-
   const login = () => {
     console.log(id, pw);
   };
 
   const emailVerification = () => {
     console.log("이메일 확인");
-  }
-  
+  };
+
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
-      <div className="w-2/5 h-[90%] bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-8">  
+      <div className="w-2/5 h-11/12 bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-8">
         <div className="flex flex-col justify-normal items-center gap-5 pt-10">
           <p className="font-sans text-4xl font-bold text-[#80BBF7]">내밀함</p>
-          <p className="font-sans font-normal text-lg text-[#00000099]">우리가 공유하는 가장 진솔한 이야기</p>
+          <p className="font-sans font-normal text-lg text-[#00000099]">
+            우리가 공유하는 가장 진솔한 이야기
+          </p>
         </div>
-        
+
         <section className="w-full flex flex-col justify-normal items-center gap-10">
           <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
             <input
@@ -36,10 +56,13 @@ const SignUpPage = () => {
               type="text"
               id="username"
               placeholder="아이디"
-              className="input w-full h-full rounded-lg text-[#00000070]" 
+              className="input w-full h-full rounded-lg text-[#00000070]"
               onChange={(e) => setId(e.target.value)}
             />
-            <img src={require("../assets/images/peopleIcon.png")} className="w-1/12 h-full"></img>
+            <img
+              src={require("../assets/images/peopleIcon.png")}
+              className="w-1/12 h-full"
+            ></img>
           </div>
 
           <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
@@ -48,11 +71,14 @@ const SignUpPage = () => {
               type="text"
               id="nickname"
               placeholder="닉네임"
-              className="input w-full h-full rounded-lg text-[#00000070]" 
+              className="input w-full h-full rounded-lg text-[#00000070]"
               onChange={(e) => setNickName(e.target.value)}
             />
-            <img src={require("../assets/images/peopleIcon.png")} className="w-1/12 h-full"></img>
-          </div>  
+            <img
+              src={require("../assets/images/peopleIcon.png")}
+              className="w-1/12 h-full"
+            ></img>
+          </div>
 
           <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
             <input
@@ -60,12 +86,12 @@ const SignUpPage = () => {
               type="text"
               id="email"
               placeholder="이메일"
-              className="input w-full h-full rounded-lg text-[#00000070]" 
+              className="input w-full h-full rounded-lg text-[#00000070]"
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-            className="w-2/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
-             onClick={(e) => {
+              className="w-2/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
+              onClick={(e) => {
                 emailVerification();
               }}
             >
@@ -82,19 +108,19 @@ const SignUpPage = () => {
               className="input w-full h-full rounded-lg text-[#00000070]"
               onChange={(e) => setPw(e.target.value)}
             />
-            {
-              pwVisible ? 
-              <img  
+            {pwVisible ? (
+              <img
                 src={require("../assets/images/visibleIcon.png")}
                 className="w-1/12 h-4/5 pt-1"
                 onClick={(e) => setPwVisible(!pwVisible)}
-              ></img> :
-              <img  
+              ></img>
+            ) : (
+              <img
                 src={require("../assets/images/invisibleIcon.png")}
                 className="w-1/12 h-full"
                 onClick={(e) => setPwVisible(!pwVisible)}
               ></img>
-            }
+            )}
           </div>
 
           <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
@@ -103,24 +129,28 @@ const SignUpPage = () => {
               type={pwVerificationVisible ? "text" : "password"}
               id="passwordVerification"
               placeholder="비밀번호 확인"
-              className="input w-full h-full rounded-lg text-[#00000070]" 
+              className="input w-full h-full rounded-lg text-[#00000070]"
               onChange={(e) => setPwVerification(e.target.value)}
             />
-            {
-              pwVerificationVisible ? 
-              <img  
+            {pwVerificationVisible ? (
+              <img
                 src={require("../assets/images/visibleIcon.png")}
                 className="w-1/12 h-4/5 pt-1"
-                onClick={(e) => setPwVerificationVisible(!pwVerificationVisible)}
-              ></img> :
-              <img  
+                onClick={(e) =>
+                  setPwVerificationVisible(!pwVerificationVisible)
+                }
+              ></img>
+            ) : (
+              <img
                 src={require("../assets/images/invisibleIcon.png")}
                 className="w-1/12 h-full"
-                onClick={(e) => setPwVerificationVisible(!pwVerificationVisible)}
+                onClick={(e) =>
+                  setPwVerificationVisible(!pwVerificationVisible)
+                }
               ></img>
-            }  
+            )}
           </div>
-          
+
           <div className="flex flex-col gap-3">
             <p className="font-sans text-sm font-normal text-[#00000099] drop-shadow-md">
               내밀함에서 어떠한 역할로 활동하고 싶은가요?
@@ -128,11 +158,15 @@ const SignUpPage = () => {
             <div className="flex justify-around">
               <div className="flex gap-2">
                 <input type="radio" name="role" value="받는 이" />
-                <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">받는 이</span>
+                <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">
+                  받는 이
+                </span>
               </div>
               <div className="flex gap-2">
                 <input type="radio" name="role" value="보내는 이" />
-                <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">보내는 이</span>
+                <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">
+                  보내는 이
+                </span>
               </div>
             </div>
           </div>
@@ -145,14 +179,27 @@ const SignUpPage = () => {
               login();
             }}
           >
-            <p className="text-[#0078F0] font-sans text-xl font-bold">회원가입</p>
+            <p className="text-[#0078F0] font-sans text-xl font-bold">
+              회원가입
+            </p>
           </button>
-        
+
           <p
             className="font-sans text-sm font-normal text-[#00000099] drop-shadow-md pt-3"
-            onClick={(e) => {navigate("/signin");}}
+            onClick={(e) => {
+              navigate("/signin");
+            }}
           >
-            이미 내밀함 계정이 있으신가요?
+            이미 내밀함 계정이 있으신가요?{" "}
+            <span
+              className="font-bold"
+              onClick={(e) => {
+                navigate("/signup");
+              }}
+            >
+              이 곳
+            </span>
+            에서 로그인해 주세요.
           </p>
         </div>
       </div>

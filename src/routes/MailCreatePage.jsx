@@ -42,13 +42,23 @@ const MailCreatePage = () => {
                 편지 쓰기
               </div>
             </div>
-            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
+            <div
+              className="flex flex-col ml-2 mb-6 hover:-translate-x-2"
+              onClick={() => {
+                window.alert("추후 제공될 기능입니다.");
+              }}
+            >
               <div class="w-14 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-2"></div>
               <div className="w-14 h-28 border bg-white vertical-text text-center text-lg font-extrabold pl-2 text-[#4694F0] translate-x-2 drop-shadow-md">
                 기억 상자
               </div>
             </div>
-            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
+            <div
+              className="flex flex-col ml-2 mb-6 hover:-translate-x-2"
+              onClick={() => {
+                window.alert("추후 제공될 기능입니다.");
+              }}
+            >
               <div class="w-14 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-2"></div>
               <div className="w-14 h-28 border bg-white vertical-text text-center text-lg font-extrabold pl-2 text-[#4694F0] drop-shadow-md translate-x-2">
                 나의 정보
