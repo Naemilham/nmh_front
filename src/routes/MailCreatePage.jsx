@@ -1,8 +1,33 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { saveEmail, sendEmail } from "../apis/api";
 
 const MailCreatePage = () => {
   const navigate = useNavigate();
+
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  const [emailId, setEmailId] = useState(-1);
+
+  const save = async () => {
+    console.log('tt', title, content);
+    const response = await saveEmail({
+      "subject": title,
+      "message": content,
+      "writer": 1,
+    });
+    setEmailId(response.data.id);
+    console.log(response);
+  }
+  
+  const send = async () => {
+      const response = await sendEmail({
+        "email_id": 3,
+      });
+      console.log(response);
+  }
+
   return (
     <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
       {/*header*/}
@@ -70,29 +95,25 @@ const MailCreatePage = () => {
             <input
               placeholder="제목을 입력해 주세요."
               className="w-11/12 h-16 border-2 mt-10 p-4 border-gray-300 flex flex-col justify-between rounded-lg"
+              onChange={(e)=>setTitle(e.target.value)}
             ></input>
             <textarea
               placeholder="내용을 입력해 주세요."
               className="w-11/12 h-4/5 border-2 mt-2 p-4 border-gray-300 flex flex-col justify-between items-center rounded-lg resize-none"
+              onChange={(e)=>setContent(e.target.value)}
             />
             <div className="w-full h-1/5 flex flex-row justify-center items-center gap-5">
               <button
                 type="button"
                 className="button-a !w-32"
-                onClick={() => {
-                  window.alert("추후 제공될 기능입니다.");
-                }}
+                onClick={() => save()}
               >
-                미리보기
+                저장하기
               </button>
               <button
                 type="button"
                 className="button-a !w-32"
-                onClick={() => {
-                  window.alert(
-                    "소중한 마음을 잘 전해받았습니다. 메일은 오늘 자정에 받는 이들에게 전송됩니다."
-                  );
-                }}
+                onClick={() => send()}
               >
                 편지 보내기
               </button>
