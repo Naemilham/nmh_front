@@ -4,7 +4,11 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}","./**/@material-tailwind/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./**/@material-tailwind/**/*.{js,ts,jsx,tsx}",
+  ],
+
   theme: {
     extend: {
       colors: {
@@ -14,7 +18,7 @@ module.exports = {
     },
     fontFamily: {
       notosanskr: ["Noto Sans KR"],
-      PretendardRegular: ["Pretendard-Regular"],
+      notoSerifkr: ["Noto Serif KR"],
     },
   },
   plugins: [],
