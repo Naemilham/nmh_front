@@ -5,7 +5,9 @@ import { getCookie } from "../utils/cookie";
 
 const ApiTest = () => {
   useEffect(() => {
+	  console.log("돼나?");
     const getPostAPI = async () => {
+	console.log("돼라");
        const response = await axios.post("http://naemilham.site/api/accounts/signup/", 
          {
            "username": "user3",
