@@ -2,7 +2,7 @@ import { useEffect } from "react";
 // import {signIn} from "../apis/api";
 import axios from "axios";
 
-const apitest = () => {
+const ApiTest = () => {
   useEffect(() => {
     const getPostAPI = async () => {
       const response = await axios.get("https://naemilham.site/");
@@ -10,12 +10,9 @@ const apitest = () => {
     };
     getPostAPI();
   }, []);
-
-  return (
-    <div>
-      <h1>API TEST</h1>
-    </div>
-  );
+	return (
+		<div>여기는 apitest!</div>
+	);
 };
 
-export default apitest;
+export default ApiTest;

@@ -9,7 +9,7 @@ import MailCreatePage from "./routes/MailCreatePage";
 import SignUpPage from "./routes/SignUpPage";
 import SignInPage from "./routes/SignInPage";
 import SubScribeManagePage from "./routes/SubscribeManagePage";
-import apitest from "./routes/apitest";
+import ApiTest from "./routes/ApiTest";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/submanage" element={<SubScribeManagePage />} />
-          <Route path="/apitest" element={<apitest />} />
+          <Route path="/apitest" element={<ApiTest />} />
         </Routes>
       </BrowserRouter>
     </div>
