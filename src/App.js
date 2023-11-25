@@ -13,7 +13,6 @@ import ApiTest from "./routes/ApiTest";
 import WriterListPage from "./routes/WriterListPage"
 import SubscribeListPage from "./routes/SubscribeListPage"
 
-
 function App() {
   return (
     <div className="app">
