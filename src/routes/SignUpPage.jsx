@@ -30,13 +30,19 @@ const SignUpPage = () => {
 
   const [pwVisible, setPwVisible] = useState(false);
   const [pwVerificationVisible, setPwVerificationVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const login = () => {
     console.log(id, pw);
   };
 
-  const emailVerification = () => {
-    console.log("이메일 확인");
+  const handleEmailVerification = () => {
+    sendEmail();
+    setIsVisible(true);
+  };
+
+  const sendEmail = () => {
+    console.log("인증메일 보내기");
   };
 
   return (
@@ -50,13 +56,13 @@ const SignUpPage = () => {
         </div>
 
         <section className="w-full flex flex-col justify-normal items-center gap-10">
-          <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
+          <div className="w-3/5 h-8 flex items-start border-b border-[#777E90]">
             <input
               required
               type="text"
               id="username"
               placeholder="아이디"
-              className="input w-full h-full rounded-lg text-[#00000070]"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none"
               onChange={(e) => setId(e.target.value)}
             />
             <img
@@ -65,13 +71,13 @@ const SignUpPage = () => {
             ></img>
           </div>
 
-          <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
+          <div className="w-3/5 h-8 flex items-start border-b border-[#777E90]">
             <input
               required
               type="text"
               id="nickname"
               placeholder="닉네임"
-              className="input w-full h-full rounded-lg text-[#00000070]"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none"
               onChange={(e) => setNickName(e.target.value)}
             />
             <img
@@ -80,32 +86,49 @@ const SignUpPage = () => {
             ></img>
           </div>
 
-          <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
+          <div className="w-3/5 h-8 flex items-center border-b border-[#777E90]">
             <input
               required
               type="text"
               id="email"
               placeholder="이메일"
-              className="input w-full h-full rounded-lg text-[#00000070]"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none"
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className="w-2/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
-              onClick={(e) => {
-                emailVerification();
-              }}
+              className="w-5/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg"
+              onClick={handleEmailVerification}
             >
-              <p className="text-[#0078F0] font-sans text-l font-bold">인증</p>
-            </button>
+              <p className="text-[#0078F0] font-bold px-1">인증 메일 전송</p>
+            </button>{" "}
           </div>
+          {isVisible && (
+            <div className="w-3/5 h-8 flex items-start border-b border-[#777E90]">
+              <input
+                required
+                type="text"
+                id="authCode"
+                placeholder="인증 코드를 입력해주세요."
+                className="input w-full h-full rounded-lg text-[#000000] outline-none"
+              ></input>
+              <button
+                className="w-4/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
+                onClick={() => {
+                  window.alert("이메일 인증이 완료되었습니다.");
+                }}
+              >
+                <p className="text-[#0078F0] font-bold">인증하기</p>
+              </button>
+            </div>
+          )}
 
-          <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
+          <div className="w-3/5 h-8 flex items-start border-b border-[#777E90]">
             <input
               required
               type={pwVisible ? "text" : "password"}
               id="password"
               placeholder="비밀번호"
-              className="input w-full h-full rounded-lg text-[#00000070]"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none"
               onChange={(e) => setPw(e.target.value)}
             />
             {pwVisible ? (
@@ -123,13 +146,13 @@ const SignUpPage = () => {
             )}
           </div>
 
-          <div className="w-3/5 h-8 flex itmes-start border-b border-[#777E90]">
+          <div className="w-3/5 h-8 flex items-start border-b border-[#777E90]">
             <input
               required
               type={pwVerificationVisible ? "text" : "password"}
               id="passwordVerification"
               placeholder="비밀번호 확인"
-              className="input w-full h-full rounded-lg text-[#00000070]"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none"
               onChange={(e) => setPwVerification(e.target.value)}
             />
             {pwVerificationVisible ? (
@@ -152,8 +175,8 @@ const SignUpPage = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-sans text-sm font-normal text-[#00000099] drop-shadow-md">
-              내밀함에서 어떠한 역할로 활동하고 싶은가요?
+            <p className="font-sans text-base font-semibold text-[#00000099] drop-shadow-md">
+              내밀함에서 어떤 역할로 활동하고 싶으신가요?
             </p>
             <div className="flex justify-around">
               <div className="flex gap-2">
@@ -184,17 +207,12 @@ const SignUpPage = () => {
             </p>
           </button>
 
-          <p
-            className="font-sans text-sm font-normal text-[#00000099] drop-shadow-md pt-3"
-            onClick={(e) => {
-              navigate("/signin");
-            }}
-          >
-            이미 내밀함 계정이 있으신가요?{" "}
+          <p className="font-sans text-sm font-normal text-[#000000a5] drop-shadow-md pt-5">
+            이미 내밀함 계정이 있으신가요? &nbsp;
             <span
               className="font-bold"
               onClick={(e) => {
-                navigate("/signup");
+                navigate("/signin");
               }}
             >
               이 곳
