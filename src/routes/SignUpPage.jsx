@@ -1,49 +1,64 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-/*import { signUp } from "../api/api";
-const SignUpPage = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    username: "",
-    password: "",
-    confirm_password: "",
-  });
-
-  const handleFormData = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
-
-  const handleSignUpSubmit = (e) => {
-    e.preventDefault();
-    signUp(formData);
-    alert("회원가입이 완료되었습니다!");
-  }; */
+import { signUp, sendVerificationEmail, verifyEmail } from "../apis/api";
 
 const SignUpPage = () => {
+  const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
+
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const [pwVerification, setPwVerification] = useState("");
   const [nickName, setNickName] = useState("");
   const [email, setEmail] = useState("");
+  const [isWriter, setIsWriter] = useState(false);
+
+  const [emailId, setEmailId] = useState(-1);
+  const [emailVerification, setEmailVerification] = useState("");
 
   const [pwVisible, setPwVisible] = useState(false);
   const [pwVerificationVisible, setPwVerificationVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  const login = () => {
-    console.log(id, pw);
+  const register = async () => {
+    const response = await signUp({
+      "username": id,
+      "password1": pw,
+      "password2": pwVerification,
+      "email": email,
+      "nickname": nickName,
+      "is_writer": "true"
+    });
+    console.log('response', response);
+    alert("회원가입이 완료되었습니다.")
   };
 
   const handleEmailVerification = () => {
-    sendEmail();
-    setIsVisible(true);
+    if(!emailRegEx.test(email)){
+      alert("옳지 않은 이메일 형식입니다.");
+    }
+    else{
+      sendEmail();
+      setIsVisible(true);
+    }
   };
 
-  const sendEmail = () => {
-    console.log("인증메일 보내기");
+  const sendEmail = async () => {
+    const response = await sendVerificationEmail({
+      "email": email,
+    });
+    setEmailId(response.data.id);
+    console.log('response: ', response);
   };
+  
+  const confirmEmail = async () => {
+    if(emailId != -1){
+      const response = await verifyEmail(emailId, {
+        "verification_code": emailVerification,
+      });
+      console.log(response);
+    }
+  }
 
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
@@ -110,12 +125,11 @@ const SignUpPage = () => {
                 id="authCode"
                 placeholder="인증 코드를 입력해주세요."
                 className="input w-full h-full rounded-lg text-[#000000] outline-none"
+                onChange={(e) => setEmailVerification(e.target.value)}
               ></input>
               <button
                 className="w-4/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
-                onClick={() => {
-                  window.alert("이메일 인증이 완료되었습니다.");
-                }}
+                onClick={() => confirmEmail()}
               >
                 <p className="text-[#0078F0] font-bold">인증하기</p>
               </button>
@@ -180,13 +194,13 @@ const SignUpPage = () => {
             </p>
             <div className="flex justify-around">
               <div className="flex gap-2">
-                <input type="radio" name="role" value="받는 이" />
+                <input type="radio" name="role" value="받는 이" checked onClick={() => setIsWriter(false)}/>
                 <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">
                   받는 이
                 </span>
               </div>
               <div className="flex gap-2">
-                <input type="radio" name="role" value="보내는 이" />
+                <input type="radio" name="role" value="보내는 이" onClick={() => setIsWriter(true)} />
                 <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">
                   보내는 이
                 </span>
@@ -199,7 +213,7 @@ const SignUpPage = () => {
           <button
             className="w-2/5 h-12 bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
             onClick={(e) => {
-              login();
+              register();
             }}
           >
             <p className="text-[#0078F0] font-sans text-xl font-bold">

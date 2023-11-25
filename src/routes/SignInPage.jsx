@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signIn, signUp } from "../apis/api"; 
 
 const SignInPage = () => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const [pwVisible, setPwVisible] = useState(false);
-  const login = () => {
-    console.log(id, pw);
+  const login = async () =>  {
+    const response = await signIn({
+      "username": id,
+      "password": pw,
+    });
+    console.log(response);
   };
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
@@ -29,7 +34,7 @@ const SignInPage = () => {
           <input
             required
             type="text"
-            id="username"
+            id="userId"
             placeholder="아이디"
             className="input w-full h-12 rounded-lg text-[#00000070]"
             onChange={(e) => setId(e.target.value)}
@@ -44,10 +49,10 @@ const SignInPage = () => {
           <input
             required
             type={pwVisible ? "text" : "password"}
-            id="username"
+            id="userPw"
             placeholder="비밀번호"
             className="input w-full h-12 rounded-lg text-[#00000070]"
-            onChange={(e) => setId(e.target.value)}
+            onChange={(e) => setPw(e.target.value)}
           />
           {pwVisible ? (
             <img
@@ -75,7 +80,7 @@ const SignInPage = () => {
           </button>
 
           <p className="font-sans text-sm font-normal text-[#00000099] drop-shadow-md pt-3">
-            내밀함에 처음 방문하셨나요? 지금{" "}
+            내밀함에 처음 방문하셨나요? 지금
             <span
               className="font-bold"
               onClick={(e) => {
@@ -83,7 +88,7 @@ const SignInPage = () => {
               }}
             >
               회원가입
-            </span>{" "}
+            </span>
             해보세요!
           </p>
         </div>
