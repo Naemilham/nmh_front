@@ -8,15 +8,10 @@ const ApiTest = () => {
 	  console.log("돼나?");
     const getPostAPI = async () => {
 	console.log("돼라");
-       const response = await axios.post("https://naemilham.site/api/accounts/signup/", 
-         {
-           "username": "user3",
-           "password1": "user3user3",
-           "password2": "user3user3",
+       const response = await axios.post("https://naemilham.site/api/accounts/send-verification-email/", 
+        {
            "email": "idltkim@gmail.com",
-           "nickname": "유저3",
-           "is_writer": "true"
-       }, 
+        }, 
          {
          headers: {
            "Content-Type": "application/json",
