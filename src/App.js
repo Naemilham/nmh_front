@@ -12,7 +12,6 @@ import SubScribeManagePage from "./routes/SubscribeManagePage";
 import ApiTest from "./routes/ApiTest";
 import WriterListPage from "./routes/WriterListPage"
 import SubscribeListPage from "./routes/SubscribeListPage"
-import ModalTestPage from "./routes/ModalTestPage";
 
 function App() {
   return (
@@ -31,7 +30,6 @@ function App() {
           <Route path="/apitest" element={<ApiTest />} />
           <Route path="/writerlist" element={<WriterListPage />} />
           <Route path="/subscribelist" element={<SubscribeListPage />} />
-          <Route path="/modaltest" element={<ModalTestPage />} />
         </Routes>
       </BrowserRouter>
     </div>
