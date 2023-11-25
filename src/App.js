@@ -10,6 +10,9 @@ import SignUpPage from "./routes/SignUpPage";
 import SignInPage from "./routes/SignInPage";
 import SubScribeManagePage from "./routes/SubscribeManagePage";
 import ApiTest from "./routes/ApiTest";
+import WriterListPage from "./routes/WriterListPage"
+import SubscribeListPage from "./routes/SubscribeListPage"
+
 
 function App() {
   return (
@@ -26,6 +29,8 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/submanage" element={<SubScribeManagePage />} />
           <Route path="/apitest" element={<ApiTest />} />
+          <Route path="/writerlist" element={<WriterListPage />} />
+          <Route path="/subscribelist" element={<SubscribeListPage />} />
         </Routes>
       </BrowserRouter>
     </div>
