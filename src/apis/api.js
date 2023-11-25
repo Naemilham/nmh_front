@@ -57,19 +57,34 @@ export const getAllReaders = async () => {
 
 // email save API
 export const saveEmail = async (data) => {
-    const response = await instance.post("/api/mails/save/", data);
-    return response;
+    const response = await instanceWithToken.post("/api/mails/save/", data);
+    if (response.status === 201) {
+      console.log("Mail saved successfully");
+      window.location.href = "/";
+    } else {
+      console.log("[Error] Mail save failed");
+    }
   };
 
 export const modifyEmail = async (data) => {
-    const response = await instance.put("/api/mails/save/", data);
-    return response;
+    const response = await instanceWithToken.patch("/api/mails/save/", data);
+    if (response.status === 200) {
+      console.log("Mail modified successfully");
+      window.location.href = "/";
+    } else {
+      console.log("[Error] Mail modify failed");
+    }
   };
 
 export const deleteEmail = async (data) => {
-    const response = await instance.delete("/api/mails/save/", data);
-    return response;
-  };
+    const response = await instanceWithToken.delete("/api/mails/save/", data);
+    if (response.status === 204) {
+      console.log("Mail deleted successfully");
+      window.location.href = "/";
+    } else {
+      console.log("[Error] Mail delete failed");
+    }
+  }
 
 // email send API
 export const sendEmail = async (data) => {
@@ -79,6 +94,11 @@ export const sendEmail = async (data) => {
 
 export const getEmail = async () => {
     const response = await instance.get("/api/mails/");
+    return response;
+  };
+
+export const replyEmail = async (data) => {
+    const response = await instance.post("/api/mails/reply/", data);
     return response;
   };
 
