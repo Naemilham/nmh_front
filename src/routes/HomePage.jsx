@@ -54,7 +54,7 @@ const HomePage = () => {
         </Carousel>
       </div>
 
-      <div className="w-full h-72 pt-28 flex flex-col items-center gap-5">
+      <div className="w-full h-60 pt-16 flex flex-col items-center gap-5">
         <p className="text-xl">매일 나의 메일함으로 찾아오는 편지</p>
         <p className="font-bold text-3xl">지금 만나볼 수 있는 타인의 내밀함</p>
       </div>
@@ -67,7 +67,7 @@ const HomePage = () => {
                 유년의 뜰을 떠난 후 도시에서 보낸, 유년기의 열 곱은 되는 몇십 년
                 동안에 맛본 인생의 단맛과 쓴맛, 내 몸을 스쳐간 일이라고는
                 믿어지지 않게 격렬했던 애증과 애환, 허방과 나락, 행운과 기적,
-                이런 내 인생의 명장면(?)에 반복해서 몰입하다 보면 그렇게 시간이
+                이런 내 인생의 명장면에 반복해서 몰입하다 보면 그렇게 시간이
                 가버린다.
               </div>
               <div className="flex flex-row justify-between items-end">
