@@ -8,7 +8,7 @@ const ApiTest = () => {
 	  console.log("돼나?");
     const getPostAPI = async () => {
 	console.log("돼라");
-       const response = await axios.post("http://naemilham.site/api/accounts/signup/", 
+       const response = await axios.post("https://naemilham.site/api/accounts/signup/", 
          {
            "username": "user3",
            "password1": "user3user3",
