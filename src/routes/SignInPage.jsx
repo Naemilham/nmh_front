@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signIn, signUp } from "../apis/api"; 
+import { signIn, signUp } from "../apis/api";
 
 const SignInPage = () => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
   const [pwVisible, setPwVisible] = useState(false);
-  const login = async () =>  {
+  const login = async () => {
     const response = await signIn({
-      "username": id,
-      "password": pw,
+      username: id,
+      password: pw,
     });
     console.log(response);
   };
@@ -24,8 +24,10 @@ const SignInPage = () => {
         />
 
         <div className="flex flex-col justify-normal items-center gap-5 pt-2">
-          <p className="font-sans text-5xl font-bold text-[#80BBF7]">내밀함</p>
-          <p className="font-sans font-normal text-lg text-[#00000099]">
+          <p className="font-KimjungchulMyungjoBold text-5xl font-bold text-[#80BBF7]">
+            내밀함
+          </p>
+          <p className="font-NotoSerifKR font-semibold text-xl text-[#00000099]">
             우리가 공유하는 가장 진솔한 이야기
           </p>
         </div>
@@ -36,7 +38,7 @@ const SignInPage = () => {
             type="text"
             id="userId"
             placeholder="아이디"
-            className="input w-full h-12 rounded-lg text-[#00000070]"
+            className="input w-full h-12 rounded-lg text-[#00000070] font-PretendardRegular outline-none"
             onChange={(e) => setId(e.target.value)}
           />
           <img
@@ -51,7 +53,7 @@ const SignInPage = () => {
             type={pwVisible ? "text" : "password"}
             id="userPw"
             placeholder="비밀번호"
-            className="input w-full h-12 rounded-lg text-[#00000070]"
+            className="input w-full h-12 rounded-lg text-[#00000070] font-PretendardRegular outline-none"
             onChange={(e) => setPw(e.target.value)}
           />
           {pwVisible ? (
@@ -69,25 +71,27 @@ const SignInPage = () => {
           )}
         </div>
 
-        <div className="pt-10 pb-12">
+        <div className=" pb-12">
           <button
             className="w-full h-16 bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
             onClick={(e) => {
               login();
             }}
           >
-            <p className="text-[#0078F0] font-sans text-xl font-bold">로그인</p>
+            <p className="text-[#0078F0] font-PretendardRegular text-xl font-extrabold">
+              로그인
+            </p>
           </button>
 
-          <p className="font-sans text-sm font-normal text-[#00000099] drop-shadow-md pt-3">
-            내밀함에 처음 방문하셨나요? 지금
+          <p className="font-PretendardRegular font-normal text-[#00000099] drop-shadow-md pt-5">
+            내밀함에 처음 방문하셨나요? 지금&nbsp;
             <span
-              className="font-bold"
+              className="font-bold font-PretendardRegular"
               onClick={(e) => {
                 navigate("/signup");
               }}
             >
-              회원가입
+              회원가입&nbsp;
             </span>
             해보세요!
           </p>
