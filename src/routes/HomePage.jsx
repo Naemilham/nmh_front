@@ -18,8 +18,10 @@ const HomePage = () => {
             src={require("../assets/images/nmhIcon-yellow.png")}
           />
           <div className="flex items-end gap-2">
-            <div className="font-bold text-4xl text-[#0078F080]">내밀함</div>
-            <div className="font-normal text-lg text-[#00000099]">
+            <div className="font-bold text-4xl text-[#0078F080] font-KimjungchulMyungjoBold">
+              내밀함
+            </div>
+            <div className="text-lg text-[#00000099] font-NotoSerifKR">
               우리가 공유하는 가장 진솔한 이야기
             </div>
           </div>
@@ -55,15 +57,19 @@ const HomePage = () => {
       </div>
 
       <div className="w-full h-60 pt-16 flex flex-col items-center gap-5">
-        <p className="text-xl">매일 나의 메일함으로 찾아오는 편지</p>
-        <p className="font-bold text-3xl">지금 만나볼 수 있는 타인의 내밀함</p>
+        <p className="text-xl font-NotoSerifKR">
+          매일 나의 메일함으로 찾아오는 편지
+        </p>
+        <p className="font-extrabold text-4xl font-NotoSerifKR">
+          지금 만나볼 수 있는 타인의 내밀함
+        </p>
       </div>
 
       <div className="w-full h-[480px] flex flex-row justify-center">
         <div className="w-3/4 h-full flex flex-row justify-center gap-16">
           <div className="w-80 h-80 bg-[#FFF1BF] rounded-2xl flex flex-col justify-center items-center">
             <div className="w-full h-60 px-4 flex flex-col justify-between gap-6">
-              <div className="line-clamp-[6] font-medium text-base text-[#3B5266] text-justify">
+              <div className="line-clamp-[6] font-medium font-DovemayoMedium text-lg text-[#3B5266] text-justify">
                 유년의 뜰을 떠난 후 도시에서 보낸, 유년기의 열 곱은 되는 몇십 년
                 동안에 맛본 인생의 단맛과 쓴맛, 내 몸을 스쳐간 일이라고는
                 믿어지지 않게 격렬했던 애증과 애환, 허방과 나락, 행운과 기적,
@@ -72,8 +78,10 @@ const HomePage = () => {
               </div>
               <div className="flex flex-row justify-between items-end">
                 <div className="flex flex-col gap-2">
-                  <div className="font-bold text-xl text-[#304659]">권혁범</div>
-                  <div className="font-normal text-lg text-[#555555]">
+                  <div className="font-bold font-NPSfontBold text-xl text-[#304659]">
+                    권혁범
+                  </div>
+                  <div className="font-normal font-NotoSerifKR text-lg text-[#555555]">
                     졸업을 앞둔 대학생
                   </div>
                 </div>
@@ -135,8 +143,8 @@ const HomePage = () => {
         <div className="w-3/4 h-24 px-16 flex flex-row justify-between items-end">
           <div className="flex flex-col gap-1">
             <div className="font-bold text-xl text-[#4795F0]">내밀함</div>
-            <div className="font-sans font-medium text-sm text-[#555555D1]">
-              서울대학교 웹개발 동아리 멋쟁이 사자처럼@SNU <br />
+            <div className="font-NotoSerifKR font-medium text-sm text-[#555555D1]">
+              서울대학교 웹개발 동아리 멋쟁이사자처럼@SNU <br />
               2023-2 스크럼 프로젝트 <br />
               이수혁, 석재원, 이호준, 조유진
             </div>
