@@ -1,3 +1,4 @@
+import { resolvePath } from "react-router-dom";
 import { instance } from "./axios";
 
 export const refreshToken = async (data) => {
@@ -14,13 +15,8 @@ export const signIn = async (data) => {
   try{
     response = await instance.post("/api/accounts/signin/", data);
   } catch (err) {
-    console.log(err);
+    response = err;
   }
-  // if (response.status === 200) {
-  //     window.location.href = "/";
-  //   } else {
-  //     console.log("Error");
-  //   }
   return response;
 };
 
@@ -29,7 +25,7 @@ export const signUp = async (data) => {
   try{
     response = await instance.post("/api/accounts/signup/", data);
   } catch (err) {
-    console.log('err: ', err);
+    response = err;
   };
   return response;
 }
@@ -40,7 +36,7 @@ export const sendVerificationEmail = async (data) => {
   try{
     response = await instance.post("/api/accounts/send-verification-email/", data);
   } catch (err) {
-    console.log('err: ', err);
+    response = err;
   }
   return response;
 };
@@ -50,7 +46,7 @@ export const verifyEmail = async (id, data) => {
   try{
     response = await instance.patch(`/api/accounts/verify-email/${id}/`, data);
   } catch (err) {
-    console.log('err: ', err);
+    response = err;
   }
   return response;
 };
@@ -60,7 +56,7 @@ export const sendEmail = async (data) => {
   try{
     response = await instance.post("/api/mails/send/", data);
   } catch (err) {
-    console.log('err: ', err);
+    response = err;
   }
   return response;
 };
@@ -70,7 +66,7 @@ export const saveEmail = async (data) => {
   try{
     response = await instance.post("/api/mails/", data);
   } catch (err) {
-    console.log('err: ', err);
+    response = err;
   }
   return response;
 };
