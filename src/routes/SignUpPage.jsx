@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { signUp, sendVerificationEmail, verifyEmail } from "../apis/api";
 
 const SignUpPage = () => {
-  const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
+  const emailRegEx =
+    /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
 
   const navigate = useNavigate();
   const [id, setId] = useState("");
@@ -61,10 +62,9 @@ const SignUpPage = () => {
   };
 
   const handleEmailVerification = () => {
-    if(!emailRegEx.test(email)){
+    if (!emailRegEx.test(email)) {
       alert("옳지 않은 이메일 형식입니다.");
-    }
-    else{
+    } else {
       sendEmail();
       setEmailVerified(false);
       setIsVisible(true);
@@ -73,16 +73,16 @@ const SignUpPage = () => {
 
   const sendEmail = async () => {
     const response = await sendVerificationEmail({
-      "email": email,
+      email: email,
     });
     setEmailId(response.data.id);
     alert("인증 메일이 발송되었습니다.");
   };
-  
+
   const confirmEmail = async () => {
-    if(emailId != -1){
+    if (emailId != -1) {
       const response = await verifyEmail(emailId, {
-        "verification_code": emailVerification,
+        verification_code: emailVerification,
       });
       if(response.request.status == 200){
         alert("이메일 인증을 완료했습니다.");
@@ -95,14 +95,16 @@ const SignUpPage = () => {
         alert(errMassage);
       }
     }
-  }
+  };
 
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
       <div className="w-2/5 h-11/12 bg-white rounded-[10px] drop-shadow-[0_35px_35px_rgba(0,120,240,0.25)] relative flex flex-col justify-normal items-center gap-8">
-        <div className="flex flex-col justify-normal items-center gap-5 pt-10">
-          <p className="font-sans text-4xl font-bold text-[#80BBF7]">내밀함</p>
-          <p className="font-sans font-normal text-lg text-[#00000099]">
+        <div className="flex flex-col justify-normal items-center gap-4 pt-10">
+          <p className="font-KimjungchulMyungjoBold text-5xl font-bold text-[#80BBF7]">
+            내밀함
+          </p>
+          <p className="font-NotoSerifKR font-semibold text-xl text-[#00000099]">
             우리가 공유하는 가장 진솔한 이야기
           </p>
         </div>
@@ -114,7 +116,7 @@ const SignUpPage = () => {
               type="text"
               id="username"
               placeholder="아이디"
-              className="input w-full h-full rounded-lg text-[#000000] outline-none"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none font-PretendardRegular"
               onChange={(e) => setId(e.target.value)}
             />
             <img
@@ -129,7 +131,7 @@ const SignUpPage = () => {
               type="text"
               id="nickname"
               placeholder="닉네임"
-              className="input w-full h-full rounded-lg text-[#000000] outline-none"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none font-PretendardRegular"
               onChange={(e) => setNickName(e.target.value)}
             />
             <img
@@ -144,11 +146,11 @@ const SignUpPage = () => {
               type="text"
               id="email"
               placeholder="이메일"
-              className="input w-full h-full rounded-lg text-[#000000] outline-none"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none font-PretendardRegular"
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className="w-5/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg"
+              className="w-5/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg font-PretendardRegular"
               onClick={handleEmailVerification}
             >
               <p className="text-[#0078F0] font-bold px-1">인증 메일 전송</p>
@@ -161,14 +163,16 @@ const SignUpPage = () => {
                 type="text"
                 id="authCode"
                 placeholder="인증 코드를 입력해주세요."
-                className="input w-full h-full rounded-lg text-[#000000] outline-none"
+                className="input w-full h-full rounded-lg text-[#000000] outline-none font-PretendardRegular"
                 onChange={(e) => setEmailVerification(e.target.value)}
               ></input>
               <button
                 className="w-4/12 h-full bg-[#E5F1FD] border border-[#0078F0] rounded-lg drop-shadow-md"
                 onClick={() => confirmEmail()}
               >
-                <p className="text-[#0078F0] font-bold">인증하기</p>
+                <p className="text-[#0078F0] font-bold font-PretendardRegular">
+                  인증하기
+                </p>
               </button>
             </div>
           )}
@@ -179,7 +183,7 @@ const SignUpPage = () => {
               type={pwVisible ? "text" : "password"}
               id="password"
               placeholder="비밀번호"
-              className="input w-full h-full rounded-lg text-[#000000] outline-none"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none font-PretendardRegular"
               onChange={(e) => setPw(e.target.value)}
             />
             {pwVisible ? (
@@ -203,7 +207,7 @@ const SignUpPage = () => {
               type={pwVerificationVisible ? "text" : "password"}
               id="passwordVerification"
               placeholder="비밀번호 확인"
-              className="input w-full h-full rounded-lg text-[#000000] outline-none"
+              className="input w-full h-full rounded-lg text-[#000000] outline-none font-PretendardRegular"
               onChange={(e) => setPwVerification(e.target.value)}
             />
             {pwVerificationVisible ? (
@@ -226,19 +230,30 @@ const SignUpPage = () => {
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-sans text-base font-semibold text-[#00000099] drop-shadow-md">
+            <p className="font-NotoSerifKR text-base font-semibold text-[#00000099] drop-shadow-md">
               내밀함에서 어떤 역할로 활동하고 싶으신가요?
             </p>
             <div className="flex justify-around">
               <div className="flex gap-2">
-                <input type="radio" name="role" value="받는 이" checked onClick={() => setIsWriter(false)}/>
-                <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">
+                <input
+                  type="radio"
+                  name="role"
+                  value="받는 이"
+                  checked
+                  onClick={() => setIsWriter(false)}
+                />
+                <span className="font-PretendardRegular text-sm font-bold text-[#00000099] drop-shadow-md">
                   받는 이
                 </span>
               </div>
               <div className="flex gap-2">
-                <input type="radio" name="role" value="보내는 이" onClick={() => setIsWriter(true)} />
-                <span className="font-sans text-sm font-bold text-[#00000099] drop-shadow-md">
+                <input
+                  type="radio"
+                  name="role"
+                  value="보내는 이"
+                  onClick={() => setIsWriter(true)}
+                />
+                <span className="font-PretendardRegular text-sm font-bold text-[#00000099] drop-shadow-md">
                   보내는 이
                 </span>
               </div>
@@ -253,15 +268,15 @@ const SignUpPage = () => {
               register();
             }}
           >
-            <p className="text-[#0078F0] font-sans text-xl font-bold">
+            <p className="text-[#0078F0] font-PretendardRegular text-xl font-bold">
               회원가입
             </p>
           </button>
 
-          <p className="font-sans text-sm font-normal text-[#000000a5] drop-shadow-md pt-5">
+          <p className="font-PretendardRegular text-sm font-normal text-[#000000a5] drop-shadow-md pt-5">
             이미 내밀함 계정이 있으신가요? &nbsp;
             <span
-              className="font-bold"
+              className="font-PretendardRegular font-bold"
               onClick={(e) => {
                 navigate("/signin");
               }}
