@@ -61,33 +61,33 @@ const MailCreatePage = () => {
       </div>
       <div className="w-full h-full flex flex-row justify-stretch">
         <div className="w-full h-full flex flex-row justify-center items-center">
-          {/*tag*/}
-          <div className="flex flex-col justify-end ">
+          {/*sidebar*/}
+          <div className="flex flex-col justify-end">
             <div className="flex flex-col mb-6">
               <div class="w-15 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-1.5"></div>
               <div className="w-15 h-28 border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5">
                 편지 쓰기
               </div>
             </div>
-            <div
-              className="flex flex-col ml-2 mb-6 hover:-translate-x-2"
-              onClick={() => {
-                window.alert("추후 제공될 기능입니다.");
-              }}
-            >
-              <div class="w-14 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
-              <div className="w-14 h-28 border whitespace-pre-line bg-white vertical-text text-center text-lg font-NPSfontBold font-extrabold pl-2 text-[#7B8086] translate-x-2 drop-shadow-md">
+            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
+              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+              <div
+                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                onClick={() => {
+                  window.alert("추후 제공될 기능입니다.");
+                }}
+              >
                 기억 상자
               </div>
             </div>
-            <div
-              className="flex flex-col ml-2 mb-6 hover:-translate-x-2"
-              onClick={() => {
-                window.alert("추후 제공될 기능입니다.");
-              }}
-            >
-              <div class="w-14 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
-              <div className="w-14 h-28 border bg-white vertical-text text-center text-lg font-NPSfontBold font-extrabold pl-2 text-[#7B8086] drop-shadow-md translate-x-2">
+            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
+              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+              <div
+                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                onClick={() => {
+                  window.alert("추후 제공될 기능입니다.");
+                }}
+              >
                 나의 정보
               </div>
             </div>
