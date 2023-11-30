@@ -11,37 +11,37 @@ const HomePage = () => {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="w-full h-20 sticky z-50 top-0 bg-white flex flex-row justify-between items-center whitespace-nowrap">
+      <div className="w-full h-20 sticky z-50 top-0 bg-white flex flex-row justify-between items-center whitespace-nowrap drop-shadow-[0_10px_10px_rgba(0,120,240,0.2)]">
         <div className="w-full h-full pl-10 flex flex-row items-center gap-5">
           <img
             className="h-1/2"
             src={require("../assets/images/nmhIcon-yellow.png")}
           />
-          <div className="flex items-end gap-2">
-            <div className="font-bold text-4xl text-[#0078F080] font-KimjungchulMyungjoBold">
+          <div className="flex items-end">
+            <div className="font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080]">
               내밀함
             </div>
-            <div className="text-lg text-[#00000099] font-NotoSerifKR">
+            <div className="text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
               우리가 공유하는 가장 진솔한 이야기
             </div>
           </div>
         </div>
         <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
           <div
-            className="font-bold text-xl text-[#0078F080]"
-            onClick={(e) => {
-              navigate("/signin");
-            }}
-          >
-            로그인
-          </div>
-          <div
-            className="font-bold text-xl text-[#0078F080]"
+            className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
             onClick={(e) => {
               navigate("/signup");
             }}
           >
             회원가입
+          </div>
+          <div
+            className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+            onClick={(e) => {
+              navigate("/signin");
+            }}
+          >
+            로그인
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ const HomePage = () => {
         </Carousel>
       </div>
 
-      <div className="w-full h-60 pt-16 flex flex-col items-center gap-5">
+      <div className="w-full h-60 pt-16 flex flex-col items-center gap-4">
         <p className="text-xl font-NotoSerifKR">
           매일 나의 메일함으로 찾아오는 편지
         </p>
@@ -65,74 +65,67 @@ const HomePage = () => {
         </p>
       </div>
 
-      <div className="w-full h-[480px] flex flex-row justify-center">
-        <div className="w-3/4 h-full flex flex-row justify-center gap-16">
+      <div className="w-full h-[420px] flex flex-row justify-center">
+        <div className="w-5/6 h-full flex flex-row justify-center gap-6">
           <div className="w-80 h-80 bg-[#FFF1BF] rounded-2xl flex flex-col justify-center items-center">
-            <div className="w-full h-60 px-4 flex flex-col justify-between gap-6">
-              <div className="line-clamp-[6] font-medium font-DovemayoMedium text-lg text-[#3B5266] text-justify">
-                유년의 뜰을 떠난 후 도시에서 보낸, 유년기의 열 곱은 되는 몇십 년
-                동안에 맛본 인생의 단맛과 쓴맛, 내 몸을 스쳐간 일이라고는
-                믿어지지 않게 격렬했던 애증과 애환, 허방과 나락, 행운과 기적,
-                이런 내 인생의 명장면에 반복해서 몰입하다 보면 그렇게 시간이
-                가버린다.
+            <div className="w-full h-70 px-4 flex flex-col justify-between gap-6">
+              <div className="line-clamp-[7] font-medium font-NotoSerifKR text-base text-[#3B5266] text-justify">
+                저는 ‘친함’과 ‘편함’이 구분되는 두 개의 축이라고 생각합니다.
+                친한데 편하지 않은 사람이 있을수도, 편한데 친하지 않은 사람이
+                있을 수도 있다고 생각합니다. 제게 ‘친한’ 사람은 최근에 오랜
+                시간을 함께 보낸 사람입니다. 같이 수업을 들었을 수도 있고,
+                동아리에서 자주 얼굴을 마주쳤을 수도 있겠죠. 서로의 소식을
+                궁금해하고, 물어보고, 알아가면서 친밀해진 사람들이 있습니다.
+                서로의 정보나 생각들이 잘 동기화되어있는 사람들이, 친한
+                사람이라고 할 수 있겠네요.
               </div>
-              <div className="flex flex-row justify-between items-end">
-                <div className="flex flex-col gap-2">
-                  <div className="font-bold font-NPSfontBold text-xl text-[#304659]">
-                    권혁범
-                  </div>
-                  <div className="font-normal font-NotoSerifKR text-lg text-[#555555]">
-                    졸업을 앞둔 대학생
-                  </div>
+              <div className="flex flex-col justify-between items-end pr-1">
+                <div className="font-extrabold font-NPSfontBold text-[22px] text-end text-[#304659]">
+                  권혁범
                 </div>
-                <button className="w-28 h-12 bg-[#0078F01A] border-[1px] border-[#0078F0] rounded-lg font-bold text-lg text-[#0078F0]">
-                  편지받기
-                </button>
+                <div className="font-semibold font-PretendardRegular text-end text-[#555555ee]">
+                  졸업을 앞둔 대학생
+                </div>
               </div>
             </div>
           </div>
 
           <div className="w-80 h-80 bg-[#DCECFF] rounded-2xl flex flex-col justify-center items-center">
-            <div className="w-full h-60 px-4 flex flex-col justify-between gap-6">
-              <div className="line-clamp-[6] font-medium text-base text-[#3B5266] text-justify">
-                어린 날, 내가 누렸던 평화를 생각할 때마다 어린 날의 커다란
-                상처로부터 일용할 양식, 필요한 물건, 입고 다니던 입성, 그리고
-                식구들 사이, 집 안 속 가득히 고루 스며 있던 어머니의 입김, 그
-                따스한 숨결이 어제인 듯 되살아난다. 싸우지 않고 다투지 않고
-                슬퍼하지 않은 어린 날이 어디 있으랴. 다만 그런 일이 어머니의
-                입김 속에서 이루어졌기....
+            <div className="w-full h-70 px-4 flex flex-col justify-between gap-6">
+              <div className="line-clamp-[7] font-medium font-NotoSerifKR text-base text-[#3B5266] text-justify">
+                언젠가는 지구를 떠나 새로운 생명체를 만날 수 있을까요? 어린 시절
+                우주비행사 카피바라가 주인공인 공상 과학 동화를 표지가 닳도록
+                읽었습니다. 돌이켜 생각해보니 나를 천문학 연구의 길로 이끈 건
+                동화책이었네요. 어머니의 아파트를 정리하다 창고에서 잊고 지냈던
+                그 책을 발견했습니다.
               </div>
-              <div className="flex flex-row justify-between items-end">
-                <div className="flex flex-col gap-2">
-                  <div className="font-bold text-xl text-[#304659]">권혁범</div>
-                  <div className="font-normal text-lg text-[#555555]">
-                    졸업을 앞둔 대학생
-                  </div>
+              <div className="flex flex-col justify-between items-end pr-1">
+                <div className="font-extrabold font-NPSfontBold text-[22px] text-end text-[#304659]">
+                  CA피바라
                 </div>
-                <button className="w-28 h-12 bg-[#0078F01A] border-[1px] border-[#0078F0] rounded-lg font-bold text-lg text-[#0078F0]">
-                  편지받기
-                </button>
+                <div className="font-semibold font-PretendardRegular text-end text-[#555555ee]">
+                  우주 여행을 하는 카피바라
+                </div>
               </div>
             </div>
           </div>
 
           <div className="w-80 h-80 bg-[#E3DFFD] rounded-2xl flex flex-col justify-center items-center">
-            <div className="w-full h-60 px-4 flex flex-col justify-between gap-6">
-              <div className="line-clamp-[6] font-medium text-base text-[#3B5266] text-justify">
-                그럼 진짜 보통사람은 어디 있는 것일까? 과연 있기는 있는 것일까?
-                보통 사람이란 평균점수처럼 어떤 집단을 대표하고 싶어하는 가공의
-                숫자일 뿐, 실지로 존재하는 것은 아닐지도 모른다.
+            <div className="w-full h-70 px-4 flex flex-col justify-between gap-6">
+              <div className="line-clamp-[7] font-medium font-NotoSerifKR text-base text-[#3B5266] text-justify">
+                어제는 S전자 지원 마감일이었다. 제출 버튼을 누르고 며칠간 못 잔
+                잠을 몰아서 잤다. 일어나자마자 채용공고 사이트를 켜 다음으로
+                준비해야 할 기업을 확인하고, 취준 오픈채팅방에 새벽동안 쌓인
+                카톡을 읽으며 초조함을 느낀다. 지원과 탈락을 반복하는 취업준비는
+                끝나지 않는 시험과도 같다.
               </div>
-              <div className="flex flex-row justify-between items-end">
-                <div className="flex flex-col gap-2">
-                  <div className="font-bold text-xl text-[#304659]">권혁범</div>
-                  <div className="font-normal text-lg text-[#555555]">
-                    졸업을 앞둔 대학생
-                  </div>
+              <div className="flex flex-col justify-between items-end pr-1">
+                <div className="font-extrabold font-NPSfontBold text-[22px] text-end text-[#304659]">
+                  은지98
                 </div>
-                <button className="w-28 h-12 bg-[#0078F01A] border-[1px] border-[#0078F0] rounded-lg font-bold text-lg text-[#0078F0]">
-                  편지받기
-                </button>
+                <div className="font-semibold font-PretendardRegular text-end text-[#555555ee]">
+                  취업이 너무 하고 싶은 사람
+                </div>
               </div>
             </div>
           </div>
@@ -142,16 +135,18 @@ const HomePage = () => {
       <div className="w-full h-40 bg-[#DCECFF8F] flex flex-col justify-center items-center">
         <div className="w-3/4 h-24 px-16 flex flex-row justify-between items-end">
           <div className="flex flex-col gap-1">
-            <div className="font-bold text-xl text-[#4795F0]">내밀함</div>
-            <div className="font-NotoSerifKR font-medium text-sm text-[#555555D1]">
+            <div className="font-bold text-xl text-[#4795F0] font-NotoSerifKR">
+              내밀함
+            </div>
+            <div className="font-NotoSerifKR text-sm text-[#555555D1]">
               서울대학교 웹개발 동아리 멋쟁이사자처럼@SNU <br />
               2023-2 스크럼 프로젝트 <br />
               이수혁, 석재원, 이호준, 조유진
             </div>
           </div>
           <div className="h-full flex flex-col justify-end">
-            <div className="font-normal text-sm text-[#555555D1]">
-              Copyright SNULION2023. All rights reserved.
+            <div className="font-light font-PretendardRegular text-sm text-[#555555D1]">
+              ⓒ2023 멋쟁이사자처럼@SNU. All Rights Reserved.
             </div>
           </div>
         </div>
