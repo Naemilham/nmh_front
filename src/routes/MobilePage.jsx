@@ -19,16 +19,20 @@ const MobilePage = () => {
         </div>
       </div>
       {/*body 1*/}
-      <div className="w-full h-[700px] flex flex-col justify-center items-center">
-        <div className="font-bold text-center text-xl">
+      <div className="w-full h-[700px] flex flex-col justify-center items-center gap-5">
+        <div className="font-bold text-center text-2xl">
           우리가 공유하는
           <br />
           가장 진솔한 이야기
         </div>
-        <div className="font-bold text-center text-xl">
-          구독 버튼을 누르면 내가 원하는 작가의 글이 
+        <div className="font-medium text-center text-sm">
+          구독만 하면 내가 원하는 작가의 글이 택배처럼 배송돼요.
         </div>
-
+        <div className="font-medium text-center text-xs">
+          ✅ 내밀함은 홍보가 필요한 메일링 서비스 작가와 <br />
+          프라이빗한 소통을 원하는 독자를 연결해주는 <br />
+          메일링 서비스 플랫폼이에요.
+        </div>
       </div>
 
       {/*footer*/}
