@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp, sendVerificationEmail, verifyEmail } from "../apis/api";
+import { setCookie } from "../utils/cookie";
 
 const SignUpPage = () => {
   const emailRegEx =
@@ -50,6 +51,15 @@ const SignUpPage = () => {
         "is_writer": isWriter,
       });
       if(response.request.status == 201){
+        const accessToken = response.data.access;
+        const refreshToken = response.data.refresh;
+        const userId = response.data.user.id;
+        const profileId = response.data.user.profile_id;
+        setCookie("userId", userId);
+        setCookie("profileId", profileId);
+        setCookie("access_token", accessToken);
+        setCookie("refresh_token", refreshToken);
+
         alert("회원가입을 완료했습니다.");
         navigate("/");
       }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Carousel } from "@material-tailwind/react";
+import { getCookie } from "../utils/cookie";
+import { signOut, getUserInfo } from "../apis/api";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -8,6 +10,26 @@ const HomePage = () => {
     require("../assets/images/carousel1.png"),
     require("../assets/images/carousel2.png"),
   ];
+
+  const [isLoggedIn, setIsLoggedIn] = useState(""); 
+  const [isWriter, setIsWriter] = useState(false);
+
+  const getInfo = async () =>  {
+    const profileId = getCookie("profileId");
+    const response = await getUserInfo();
+    if(response.request.status === 200){
+      setIsWriter(response.data.user.is_writer);
+    }
+    console.log(response);
+  }
+
+  useEffect(() => {
+    const loggedIn = getCookie("access_token") ? true : false;
+    setIsLoggedIn(loggedIn);
+    if(loggedIn){
+      getInfo();
+    }
+  }, []);
 
   return (
     <div className="w-full h-full flex flex-col">
@@ -27,22 +49,45 @@ const HomePage = () => {
           </div>
         </div>
         <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
-          <div
-            className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
-            onClick={(e) => {
-              navigate("/signup");
-            }}
-          >
-            회원가입
-          </div>
-          <div
-            className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
-            onClick={(e) => {
-              navigate("/signin");
-            }}
-          >
-            로그인
-          </div>
+          { isLoggedIn ?
+            <>
+              <div
+                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                onClick={(e) => {
+                  navigate("/signup");
+                }}
+              >
+                회원가입
+              </div>
+              <div
+                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                onClick={(e) => {
+                  navigate("/signin");
+                }}
+              >
+                로그인
+              </div>
+            </> : 
+            <>
+              <div
+                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                onClick={(e) => {
+                  isWriter ? navigate("/mailcreate") : navigate("/writerlist")
+                }}
+              >
+                {isWriter ? "워크스페이스" : "마이페이지"}
+              </div>
+              <div
+                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                onClick={(e) => {
+                  signOut();
+                }}
+              >
+                로그아웃
+              </div>
+            </>
+          }
+          
         </div>
       </div>
 

@@ -23,7 +23,7 @@ const MailCreatePage = () => {
 
   const send = async () => {
     const response = await sendEmail({
-      email_id: 3,
+      email_id: emailId,
     });
     console.log(response);
   };

@@ -1,6 +1,8 @@
 import { resolvePath } from "react-router-dom";
-import { instance } from "./axios";
+import { instance, instanceWithToken } from "./axios";
+import { removeCookie } from "../utils/cookie";
 
+// account
 export const refreshToken = async (data) => {
   const response = await instance.post("/api/accounts/token/refresh/", data);
   if (response.status === 200) {
@@ -9,6 +11,14 @@ export const refreshToken = async (data) => {
     console.log("Error");
   }
 }
+export const signOut = async () => {
+  removeCookie("access_token")
+  removeCookie("refresh_token")
+  removeCookie("userId");
+  removeCookie("profileId");
+
+  window.location.href = "/";
+} 
 
 export const signIn = async (data) => {
   let response;
@@ -30,6 +40,15 @@ export const signUp = async (data) => {
   return response;
 }
 
+export const getUserInfo = async (profile_id) => {
+  let response;
+  try{
+    response = await instanceWithToken.get(`/api/accounts/info/${profile_id}/`);
+  } catch (err) {
+    response = err;
+  }
+  return response;
+}
 
 export const sendVerificationEmail = async (data) => {
   let response;
@@ -51,6 +70,7 @@ export const verifyEmail = async (id, data) => {
   return response;
 };
 
+// email
 export const sendEmail = async (data) => {
   let response;
   try{
