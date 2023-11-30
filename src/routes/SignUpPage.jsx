@@ -15,22 +15,49 @@ const SignUpPage = () => {
 
   const [emailId, setEmailId] = useState(-1);
   const [emailVerification, setEmailVerification] = useState("");
+  const [emailVerified, setEmailVerified] = useState(false);
 
   const [pwVisible, setPwVisible] = useState(false);
   const [pwVerificationVisible, setPwVerificationVisible] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   const register = async () => {
-    const response = await signUp({
-      "username": id,
-      "password1": pw,
-      "password2": pwVerification,
-      "email": email,
-      "nickname": nickName,
-      "is_writer": "true"
-    });
-    console.log('response', response);
-    alert("회원가입이 완료되었습니다.")
+    if(id === "")
+      alert("아이디를 입력해주세요!")
+    else if(pw === ""){
+      alert("닉네임을 입력해주세요!")
+    }
+    else if(pw === ""){
+      alert("비밀번호를 입력해주세요!")
+    }
+    else if(pwVerification === ""){
+      alert("비밀번호 확인을 입력해주세요!")
+    }
+    else if(pwVerification !== pw){
+      alert("동일한 비밀번호를 입력해주세요!")
+    }
+    else if(emailVerified === false){
+      alert("이메일 인증을 완료해주세요!")
+    }
+    else{
+      const response = await signUp({
+        "username": id,
+        "password1": pw,
+        "password2": pwVerification,
+        "email": email,
+        "nickname": nickName,
+        "is_writer": isWriter,
+      });
+      if(response.request.status == 201){
+        alert("회원가입을 완료했습니다.");
+        navigate("/");
+      }
+      else{
+        const responseData = response.response.data;
+        const errMassage = responseData[Object.keys(responseData)[0]][0];
+        alert(errMassage)
+      }
+    }
   };
 
   const handleEmailVerification = () => {
@@ -39,6 +66,7 @@ const SignUpPage = () => {
     }
     else{
       sendEmail();
+      setEmailVerified(false);
       setIsVisible(true);
     }
   };
@@ -48,7 +76,7 @@ const SignUpPage = () => {
       "email": email,
     });
     setEmailId(response.data.id);
-    console.log('response: ', response);
+    alert("인증 메일이 발송되었습니다.");
   };
   
   const confirmEmail = async () => {
@@ -56,7 +84,16 @@ const SignUpPage = () => {
       const response = await verifyEmail(emailId, {
         "verification_code": emailVerification,
       });
-      console.log(response);
+      if(response.request.status == 200){
+        alert("이메일 인증을 완료했습니다.");
+        setEmailVerified(true);
+      }
+      else{
+        const responseData = response.response.data;
+        const errMassage = responseData[Object.keys(responseData)[0]];
+
+        alert(errMassage);
+      }
     }
   }
 

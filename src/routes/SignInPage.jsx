@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signIn, signUp } from "../apis/api"; 
+import { setCookie } from "../utils/cookie";
 
 const SignInPage = () => {
   const navigate = useNavigate();
@@ -12,7 +13,30 @@ const SignInPage = () => {
       "username": id,
       "password": pw,
     });
-    console.log(response);
+
+    if(response.request.status == 200){
+      const accessToken = response.data.access;
+      const refreshToken = response.data.refresh;
+      const isWriter = response.data.user.is_writer;
+      const isReader = response.data.user.is_reader;
+      setCookie("access_token", accessToken);
+      setCookie("refresh_token", refreshToken);
+      if(isWriter){
+        navigate("/writerlist");
+      }
+      if(isReader){
+        navigate("/mailcreate");
+      }
+    }
+    else{
+      const responseData = response.response.data;
+      const errMassage = responseData[Object.keys(responseData)[0]][0];
+      // console.log(errMassage);
+      if(errMassage == "Unable to log in with provided credentials.")
+        alert("아이디 비밀번호가 틀립니다.")
+      if(errMassage == "This field may not be blank." || errMassage == 'Must include "username" and "password".')
+        alert("아이디 비밀번호를 입력해주세요.")
+    }
   };
   return (
     <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
