@@ -59,11 +59,11 @@ const MobilePage = () => {
 
       {/*body 2*/}
       <div className="w-full h-auto bg-[#DCECFF] bg-opacity-80 flex flex-col px-4 py-5 justify-center items-center gap-4">
-        <div className="  text-blue-400 text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
+        <div className="  text-[#1880FA] text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
           왜 메일링인가요?
         </div>
         <div className="flex flex-col gap-2">
-          <div className=" text-[#1880FA] text-center text-xl font-bold font-NPSfontBold">
+          <div className=" text-blue-400 text-center text-xl font-bold font-NPSfontBold">
             #행복한고민 #소통 #능동성
           </div>
           <div className="flex flex-col gap-1">
@@ -80,7 +80,7 @@ const MobilePage = () => {
           </div>
         </div>
         <div className="flex flex-col gap-2 mt-2">
-          <div className=" text-[#1880FA] text-center text-xl font-bold font-NPSfontBold">
+          <div className=" text-blue-400 text-center text-xl font-bold font-NPSfontBold">
             #편리함 #선택권 #자유도
           </div>
           <div className="flex flex-col gap-1">
@@ -96,7 +96,7 @@ const MobilePage = () => {
           </div>
         </div>
         <div className="flex flex-col gap-2 mt-2 mb-4">
-          <div className=" text-[#1880FA] text-center text-xl font-bold font-NPSfontBold">
+          <div className=" text-blue-400 text-center text-xl font-bold font-NPSfontBold">
             #작은습관 #친근함 #새로움
           </div>
           <div className="flex flex-col gap-1">
