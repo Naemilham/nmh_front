@@ -16,36 +16,35 @@ const MailCreatePage = () => {
 
   const testSubscribe = async () => {
     const response = await subscribe({
-        "subscribed_user": modalData.user.profile_id,
-        "subscribing_user": getCookie("profileId"),
-        "categories_id": null,
+      subscribed_user: modalData.user.profile_id,
+      subscribing_user: getCookie("profileId"),
+      categories_id: null,
     });
-    if(response.request.status == 201){
+    if (response.request.status == 201) {
       alert("구독이 완료되었습니다.");
-    }
-    else{
+    } else {
       alert(response.response.data.non_field_errors);
-    } 
-  }
+    }
+  };
 
   const profileMap = {
-    "아름드리25": require("../assets/images/profile_Arumduri.png"),
-    "오카리나": require("../assets/images/profile_Ocarina.png"),
-    "체리마루": require("../assets/images/profile_Cherry.png"),
-    "포와로36": require("../assets/images/profile_Powaro.png"),
-    "덜어린왕자": require("../assets/images/profile_Little Prince.png"),
-    "낭만고양이": require("../assets/images/profile_NangmanCat.png"),
-    "판교굼벵이": require("../assets/images/profile_Pangyo.png"),
-    "하주봉": require("../assets/images/profile_Hajubong.png"),
-  }
+    아름드리25: require("../assets/images/profile_Arumduri.png"),
+    오카리나: require("../assets/images/profile_Ocarina.png"),
+    체리마루: require("../assets/images/profile_Cherry.png"),
+    포와로36: require("../assets/images/profile_Powaro.png"),
+    덜어린왕자: require("../assets/images/profile_Little Prince.png"),
+    낭만고양이: require("../assets/images/profile_NangmanCat.png"),
+    판교굼벵이: require("../assets/images/profile_Pangyo.png"),
+    하주봉: require("../assets/images/profile_Hajubong.png"),
+  };
 
   const getWriterData = async () => {
     const writerData = await getAllWriter();
     setWriterInfo(writerData.data);
-  }
-  useEffect(()=>{
+  };
+  useEffect(() => {
     getWriterData();
-  }, [])
+  }, []);
 
   return (
     <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
@@ -71,9 +70,9 @@ const MailCreatePage = () => {
             </div>
           </div>
           <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
-            <div 
+            <div
               className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
-              onClick={()=>signOut()}
+              onClick={() => signOut()}
             >
               로그아웃
             </div>
@@ -133,18 +132,18 @@ const MailCreatePage = () => {
                   </div>
                   <div className="w-full h-[54%] rounded-2xl flex flex-row justify-between gap-5">
                     <div className="w-[40%] h-full flex flex-col justify-between gap-5">
-                      <div className="w-full h-[33%] bg-[#FEF9E5] rounded-lg border-2 border-[#F5D151D1] text-[#584410DB] text-center text-xl font-NotoSerifKR font-bold flex justify-center items-center">
+                      <div className="w-full h-[33%] bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] text-[#584410DB] text-center text-2xl font-NPSfontBold font-bold flex justify-center items-center">
                         {modalData.self_introduction}
                       </div>
-                      <div className="w-full h-[66%] bg-[#FEF9E5] rounded-lg border-2 border-[#F5D151D1] text-[#7C5C0B] text-justify text-base font-PretendardRegular font-medium flex justify-center items-center px-5">
+                      <div className="w-full h-[66%] bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] text-[#7C5C0B] text-justify text-[16px] font-NotoSerifKR flex justify-center items-center px-5">
                         {modalData.mailing_introduction}
                       </div>
                     </div>
-                    <div className="w-[58%] h-full bg-[#FEF9E5] rounded-lg border-2 border-[#F5D151D1] flex flex-col justify-center items-start px-10 gap-8">
+                    <div className="w-[58%] h-full bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] flex flex-col justify-center items-start px-10 gap-8">
                       <div className="w-[30%] h-[15%] bg-[#FFF1BF] rounded-lg border-2 border-[#F5D151D1] text-[#675013] text-xl font-NPSfontBold font-bold flex justify-center items-center">
                         샘플 메일링
                       </div>
-                      <div className="w-full h-[70%] text-[#7C5C0B] font-NotoSerifKR">
+                      <div className="w-full h-[70%] text-[#7C5C0B] font-NotoSerifKR text-[16px]">
                         {modalData.example}
                       </div>
                     </div>
@@ -179,7 +178,10 @@ const MailCreatePage = () => {
                           colors[idx % 3]
                         }] flex justify-center items-center`}
                       >
-                        <img className="h-4/5 rounded-full" src={profileMap[info.user.nickname]} />
+                        <img
+                          className="h-4/5 rounded-full"
+                          src={profileMap[info.user.nickname]}
+                        />
                       </div>
                       <div className="w-full h-2/5 flex flex-col justify-center px-3">
                         <div className="line-clamp-1 ml-1 text-[#000000aa] text-2xl font-black font-NPSfontBold">
