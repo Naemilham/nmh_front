@@ -191,8 +191,15 @@ const MobilePage = () => {
             ))}
           </Carousel>
         </div>
-        <div className="text-center text-black text-lg font-bold font-['DM Sans'] uppercase">
-          ▶ 내밀함의 서비스를 직접 체험해보고 싶으신가요?
+        <div className="gap-1">
+          <div className="text-center text-black text-opacity-80 text-[17px] font-semibold mb-1 font-PretendardRegular">
+            ▶ 내밀함 서비스를 체험해보고 싶으신가요?
+          </div>
+          <div className="text-center text-black text-[14px] mb-2 font-PretendardRegular">
+            아쉽게도 내밀함은 아직 모바일 버전을 지원하지 않습니다. <br />
+            PC로 접속하셔서 둘러보시거나
+            <br /> 잠시 후 있을 발표와 시연을 기다려주세요:)
+          </div>
         </div>
       </div>
 
