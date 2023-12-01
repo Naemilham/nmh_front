@@ -52,7 +52,7 @@ const HomePage = () => {
           {isLoggedIn ? (
             <>
               <div
-                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080] cursor-pointer"
                 onClick={(e) => {
                   isWriter ? navigate("/mailcreate") : navigate("/writerlist");
                 }}
@@ -60,7 +60,7 @@ const HomePage = () => {
                 {isWriter ? "편지 쓰기" : "마이 페이지"}
               </div>
               <div
-                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080] cursor-pointer"
                 onClick={(e) => {
                   signOut();
                 }}
@@ -71,7 +71,7 @@ const HomePage = () => {
           ) : (
             <>
               <div
-                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080] cursor-pointer"
                 onClick={(e) => {
                   navigate("/signup");
                 }}
@@ -79,7 +79,7 @@ const HomePage = () => {
                 회원가입
               </div>
               <div
-                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080] cursor-pointer"
                 onClick={(e) => {
                   navigate("/signin");
                 }}

@@ -57,21 +57,21 @@ const MailCreatePage = () => {
             />
             <div className="flex items-end">
               <div
-                className="font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080]"
+                className="font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080] cursor-pointer"
                 onClick={(e) => {
                   navigate("/");
                 }}
               >
                 내밀함
               </div>
-              <div className="text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
+              <div className="cursor-default text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
                 우리가 공유하는 가장 진솔한 이야기
               </div>
             </div>
           </div>
           <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
             <div
-              className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+              className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080] cursor-pointer"
               onClick={() => signOut()}
             >
               로그아웃
@@ -84,15 +84,15 @@ const MailCreatePage = () => {
           {/*tag*/}
           <div className="flex flex-col justify-end">
             <div className="flex flex-col mb-6">
-              <div class="w-15 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-1.5"></div>
-              <div className="w-15 h-28 border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5">
+              <div class="w-15 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-1.5 cursor-pointer"></div>
+              <div className="w-15 h-28 border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5 cursor-pointer">
                 둘러보기
               </div>
             </div>
             <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
-              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2 cursor-pointer"></div>
               <div
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2 cursor-pointer"
                 onClick={(e) => {
                   navigate("/subscribelist");
                 }}
@@ -101,9 +101,9 @@ const MailCreatePage = () => {
               </div>
             </div>
             <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
-              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2 cursor-pointer"></div>
               <div
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2 cursor-pointer"
                 onClick={() => {
                   window.alert("추후 제공될 기능입니다.");
                 }}
@@ -122,7 +122,7 @@ const MailCreatePage = () => {
                       src={require("../assets/images/modalBackground.png")}
                       className="w-full h-full object-none rounded-2xl"
                     />
-                    <div className="w-[18%] h-[50%] text-[#675013] text-3xl font-bold font-NPSfontBold shadow-lg rounded-xl bg-[#FFF1BF] border-2 border-[#F5D151] flex justify-center items-center absolute left-[3%] -bottom-[10%]">
+                    <div className="w-[18%] h-[50%] cursor-default text-[#675013] text-3xl font-bold font-NPSfontBold shadow-lg rounded-xl bg-[#FFF1BF] border-2 border-[#F5D151] flex justify-center items-center absolute left-[3%] -bottom-[10%]">
                       {modalData.user.nickname}
                     </div>
                     <img
@@ -132,7 +132,7 @@ const MailCreatePage = () => {
                   </div>
                   <div className="w-full h-[54%] rounded-2xl flex flex-row justify-between gap-5">
                     <div className="w-[40%] h-full flex flex-col justify-between gap-5">
-                      <div className="w-full h-[33%] bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] text-[#584410DB] text-center text-2xl font-NPSfontBold font-bold flex justify-center items-center">
+                      <div className="w-full h-[33%]  bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] text-[#584410DB] text-center text-2xl font-NPSfontBold font-bold flex justify-center items-center">
                         {modalData.self_introduction}
                       </div>
                       <div className="w-full h-[66%] bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] text-[#7C5C0B] text-justify text-[16px] font-NotoSerifKR flex justify-center items-center px-5">
@@ -140,7 +140,7 @@ const MailCreatePage = () => {
                       </div>
                     </div>
                     <div className="w-[58%] h-full bg-[#FEF9E5] rounded-xl border-2 border-[#F5D151D1] flex flex-col justify-center items-start px-10 gap-8">
-                      <div className="w-[30%] h-[15%] bg-[#FFF1BF] rounded-lg border-2 border-[#F5D151D1] text-[#675013] text-xl font-NPSfontBold font-bold flex justify-center items-center">
+                      <div className="w-[30%] h-[15%] cursor-default bg-[#FFF1BF] rounded-lg border-2 border-[#F5D151D1] text-[#675013] text-xl font-NPSfontBold font-bold flex justify-center items-center">
                         샘플 메일링
                       </div>
                       <div className="w-full h-[70%] text-[#7C5C0B] font-NotoSerifKR text-[16px]">
@@ -166,7 +166,7 @@ const MailCreatePage = () => {
               </>
             ) : (
               <>
-                <div className="w-11/12 h-12 bg-gray-200 rounded-lg text-[#5C5C5C] text-lg font-semibold font-PretendardRegular flex justify-center items-center">
+                <div className="w-11/12 h-12 cursor-default bg-gray-200 rounded-lg text-[#5C5C5C] text-lg font-semibold font-PretendardRegular flex justify-center items-center">
                   내밀함에서 활동하는 모든 보내는 이들을 만나보세요. 관심있는
                   보내는 이들에 대해 더 알아보고, 메일링을 구독할 수도 있어요.
                 </div>
@@ -187,7 +187,7 @@ const MailCreatePage = () => {
                         <div className="line-clamp-1 ml-1 text-[#000000aa] text-2xl font-black font-NPSfontBold">
                           {info.user.nickname}
                         </div>
-                        <div className="line-clamp-1 ml-1 text-[#00000099] text-lg font-medium font-PretendardRegular">
+                        <div className="line-clamp-1 ml-1 text-[#00000099] text-xl font-[500] font-PretendardRegular">
                           {info.self_introduction}
                         </div>
                         <button
