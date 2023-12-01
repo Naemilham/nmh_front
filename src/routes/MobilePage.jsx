@@ -10,11 +10,11 @@ const MobilePage = () => {
   return (
     <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
       {/*header*/}
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center sticky top-0">
         <div className="w-full h-20 sticky z-50 top-0 bg-white flex rounded-b-lg drop-shadow-[0_10px_10px_rgba(0,120,240,0.2)]">
           <div className="w-full h-full flex items-center justify-center gap-4">
             <img
-              className="h-1/2 drop-shadow-sm"
+              className="h-1/2 drop-shadow-lg"
               src={require("../assets/images/nmhIcon-yellow.png")}
             />
             <div className="font-extrabold text-4xl drop-shadow-md font-KimjungchulMyungjoBold text-[#0078F080]">
@@ -119,7 +119,7 @@ const MobilePage = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center">
+          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg">
             <div className="text-center text-violet-400 text-[45px] font-bold font-PretendardRegular">
               1
             </div>
@@ -135,7 +135,7 @@ const MobilePage = () => {
               글쓰기의 즐거움을 내밀함과 함께 되찾으세요.
             </div>
           </div>
-          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center">
+          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg">
             <div className="text-center text-violet-400 text-[45px] font-bold font-PretendardRegular">
               2
             </div>
@@ -151,7 +151,7 @@ const MobilePage = () => {
               내일함에서 나의 최애 작가님을 찾아보세요.
             </div>
           </div>
-          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center">
+          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg">
             <div className="text-center text-violet-400 text-[45px] font-bold font-PretendardRegular ">
               3
             </div>
