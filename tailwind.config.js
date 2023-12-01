@@ -23,6 +23,7 @@ module.exports = {
       NPSfontBold: ["NPSfontBold"],
       KimjungchulMyungjoBold: ["KimjungchulMyungjo-Bold"],
       GmarketSansMedium: ["GmarketSansMedium"],
+      EASTARJETMedium: ["EASTARJET-Medium"],
     },
   },
   plugins: [],

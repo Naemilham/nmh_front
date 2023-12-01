@@ -11,8 +11,8 @@ const MobilePage = () => {
     <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2] relative">
       {/*header*/}
       <div className="flex flex-row justify-center fixed-header">
-        <div className="w-full h-20 bg-white flex rounded-b-lg drop-shadow-[0_10px_10px_rgba(0,120,240,0.2)]">
-          <div className="w-full h-full flex items-center justify-center gap-4">
+        <div className="w-full h-20 bg-white flex drop-shadow-[0_8px_8px_rgba(0,120,240,0.2)]">
+          <div className="w-full h-full flex items-center justify-center gap-2">
             <img
               className="h-1/2 drop-shadow-lg"
               src={require("../assets/images/nmhIcon-yellow.png")}
@@ -24,8 +24,8 @@ const MobilePage = () => {
         </div>
       </div>
       {/*body 1*/}
-      <div className="w-full h-[740px] bg-[#FFF1BF] bg-opacity-70 mt-10 pb-5 px-4 flex flex-col justify-center items-center gap-4">
-        <div className="font-extrabold text-[#F2BF00] mt-4 text-center text-4xl font-PretendardRegular">
+      <div className="w-full h-[740px] bg-[#FFF1BF] bg-opacity-70 mt-20 py-5 px-4 flex flex-col justify-center items-center gap-4">
+        <div className="font-extrabold text-[#F2BF00] mt-4 text-center text-4xl font-EASTARJETMedium">
           우리가 공유하는
           <br />
           가장 진솔한 이야기
@@ -35,7 +35,7 @@ const MobilePage = () => {
           src={require("../assets/images/mobile_envelope.png")}
         />
 
-        <div className="text-[16px] text-center font-PretendardRegular ">
+        <div className="text-[17px] text-center font-PretendardRegular ">
           내밀함은 홍보가 필요한 메일링 서비스 작가와
           <br />
           프라이빗한 소통을 원하는 독자를 연결해주는 <br />
@@ -190,7 +190,7 @@ const MobilePage = () => {
       </div>
 
       {/*footer*/}
-      <div className="w-full h-40 py-2 bg-[#DCECFF8F] flex flex-col justify-center self-center items-center">
+      <div className="w-full h-40 py-3 bg-[#DCECFF8F] flex flex-col justify-center self-center items-center">
         <div className="w-4/5 h-full flex flex-col justify-center self-center items-start gap-1">
           <div className="font-bold text-lg text-[#4795F0] font-NotoSerifKR">
             내밀함
