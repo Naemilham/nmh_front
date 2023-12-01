@@ -25,7 +25,7 @@ const MobilePage = () => {
       </div>
       {/*body 1*/}
       <div className="w-full h-auto bg-[#FFF1BF] bg-opacity-70 mt-20 py-5 px-4 flex flex-col justify-center items-center gap-5">
-        <div className="font-[1000] text-[#F2BF00] mt-4 text-center text-[40px]/[50px] font-NPSfontBold">
+        <div className="font-[1000] text-[#F2BF00] mt-4 text-center text-4xl/[50px] font-NPSfontBold">
           우리가 공유하는
           <br />
           가장 진솔한 이야기
@@ -35,17 +35,17 @@ const MobilePage = () => {
           src={require("../assets/images/mobile_envelope.png")}
         />
 
-        <div className="text-[17px] text-center font-PretendardRegular ">
-          내밀함은 홍보가 필요한 메일링 서비스 작가와
+        <div className="text-[17px] text-center font-[500] font-PretendardRegular ">
+          내밀함은 좀 더 많은 독자에게 닿고 싶어하는 작가와
           <br />
-          프라이빗한 소통을 원하는 독자를 연결해주는 <br />
+          좀 더 친근한 에세이를 읽고 싶은 독자를 연결해주는 <br />
           메일링 서비스 플랫폼이에요.
         </div>
         <div className="w-[300px] h-44 bg-gray-50 bg-opacity-70 rounded-[10px] mb-4 flex flex-col items-center justify-center gap-2">
-          <div className="text-center text-[18px] text-[#ffc801] justify-center font-bold font-NPSfontBold">
+          <div className="text-center text-[18px] text-[#F2BF00] justify-center font-bold font-NPSfontBold">
             메일링 서비스란?
           </div>
-          <div className="text-center text-sm justify-center font-medium font-PretendardRegular">
+          <div className="text-center text-[15px] justify-center font-medium font-PretendardRegular">
             독자가 소정의 구독료를 지불하면
             <br />
             구독한 작가로부터 수필과 일기 등을 <br />
