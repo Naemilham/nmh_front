@@ -1,6 +1,7 @@
 import { resolvePath } from "react-router-dom";
 import { instance, instanceWithToken } from "./axios";
 import { removeCookie } from "../utils/cookie";
+import { async } from "q";
 
 // account
 export const refreshToken = async (data) => {
@@ -90,6 +91,29 @@ export const saveEmail = async (data) => {
   }
   return response;
 };
+
+// subscribe
+export const subscribe = async (data) => {
+  let response;
+  try{
+    response = await instanceWithToken.post("/api/subscription/subscribe/", data);
+  } catch (err) {
+    response = err;
+  }
+  return response;
+}
+
+// data
+
+export const getAllWriter = async (data) => {
+  let response;
+  try{
+    response = await instance.get("/api/accounts/writers/", data);
+  } catch (err) {
+    response = err;
+  }
+  return response;
+}
 
 // accounts API
 // export const signIn = async (data) => {

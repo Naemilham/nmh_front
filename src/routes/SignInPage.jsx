@@ -28,10 +28,10 @@ const SignInPage = () => {
       setCookie("refresh_token", refreshToken);
 
       if(isWriter){
-        navigate("/writerlist");
+        navigate("/mailcreate");
       }
       if(isReader){
-        navigate("/mailcreate");
+        navigate("/writerlist");
       }
     }
     else{

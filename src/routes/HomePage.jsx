@@ -16,7 +16,7 @@ const HomePage = () => {
 
   const getInfo = async () =>  {
     const profileId = getCookie("profileId");
-    const response = await getUserInfo();
+    const response = await getUserInfo(profileId);
     if(response.request.status === 200){
       setIsWriter(response.data.user.is_writer);
     }
@@ -54,24 +54,6 @@ const HomePage = () => {
               <div
                 className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
                 onClick={(e) => {
-                  navigate("/signup");
-                }}
-              >
-                회원가입
-              </div>
-              <div
-                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
-                onClick={(e) => {
-                  navigate("/signin");
-                }}
-              >
-                로그인
-              </div>
-            </> : 
-            <>
-              <div
-                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
-                onClick={(e) => {
                   isWriter ? navigate("/mailcreate") : navigate("/writerlist")
                 }}
               >
@@ -85,7 +67,25 @@ const HomePage = () => {
               >
                 로그아웃
               </div>
-            </>
+            </> : 
+            <>
+              <div
+                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                onClick={(e) => {
+                  navigate("/signup");
+                }}
+              >
+                회원가입
+              </div>
+              <div
+                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                onClick={(e) => {
+                  navigate("/signin");
+                }}
+              >
+                로그인
+              </div>
+            </>   
           }
           
         </div>

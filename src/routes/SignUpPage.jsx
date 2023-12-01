@@ -49,6 +49,7 @@ const SignUpPage = () => {
         "email": email,
         "nickname": nickName,
         "is_writer": isWriter,
+        "is_reader": !isWriter,
       });
       if(response.request.status == 201){
         const accessToken = response.data.access;
@@ -249,7 +250,7 @@ const SignUpPage = () => {
                   type="radio"
                   name="role"
                   value="받는 이"
-                  checked
+                  checked={!isWriter}
                   onClick={() => setIsWriter(false)}
                 />
                 <span className="font-PretendardRegular text-sm font-bold text-[#00000099] drop-shadow-md">
@@ -261,6 +262,7 @@ const SignUpPage = () => {
                   type="radio"
                   name="role"
                   value="보내는 이"
+                  checked={isWriter}
                   onClick={() => setIsWriter(true)}
                 />
                 <span className="font-PretendardRegular text-sm font-bold text-[#00000099] drop-shadow-md">
