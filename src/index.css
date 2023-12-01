@@ -46,11 +46,20 @@
 }
 
 @font-face {
-  font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "EASTARJET-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: "Pretendard-Regular" !important, "NotoSerifKR", "Dovemayo-Medium",
@@ -87,7 +96,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
- 
-  z-index: 1000; 
- 
+
+  z-index: 1000;
 }
