@@ -24,8 +24,8 @@ const MobilePage = () => {
         </div>
       </div>
       {/*body 1*/}
-      <div className="w-full h-[740px] bg-[#FFF1BF] bg-opacity-70 mt-20 py-5 px-4 flex flex-col justify-center items-center gap-4">
-        <div className="font-extrabold text-[#F2BF00] mt-4 text-center text-4xl font-EASTARJETMedium">
+      <div className="w-full h-auto bg-[#FFF1BF] bg-opacity-70 mt-20 py-5 px-4 flex flex-col justify-center items-center gap-4">
+        <div className="font-[900] text-[#F2BF00] mt-4 text-center text-4xl font-EASTARJETMedium">
           우리가 공유하는
           <br />
           가장 진솔한 이야기
@@ -58,7 +58,7 @@ const MobilePage = () => {
       </div>
 
       {/*body 2*/}
-      <div className="w-full h-[740px] bg-[#DCECFF] bg-opacity-80 flex flex-col p-4 justify-center items-center gap-4">
+      <div className="w-full h-auto bg-[#DCECFF] bg-opacity-80 flex flex-col p-4 justify-center items-center gap-4">
         <div className="  text-blue-400 text-center text-4xl mt-6 mb-4 font-[900] font-GmarketSansMedium">
           왜 메일링인가요?
         </div>
@@ -113,7 +113,7 @@ const MobilePage = () => {
       </div>
 
       {/*body 3*/}
-      <div className="w-full h-[860px] bg-[#E3DFFD] bg-opacity-70 flex flex-col p-4 justify-center items-center gap-4">
+      <div className="w-full h-auto bg-[#E3DFFD] bg-opacity-70 flex flex-col p-4 justify-center items-center gap-4">
         <div className="  text-[#9270F7] text-center text-4xl mt-6 mb-4 font-[900] font-GmarketSansMedium">
           왜 내밀함인가요?
         </div>
