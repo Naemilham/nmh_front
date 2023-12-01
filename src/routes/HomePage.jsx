@@ -11,22 +11,22 @@ const HomePage = () => {
     require("../assets/images/carousel2.png"),
   ];
 
-  const [isLoggedIn, setIsLoggedIn] = useState(""); 
+  const [isLoggedIn, setIsLoggedIn] = useState("");
   const [isWriter, setIsWriter] = useState(false);
 
-  const getInfo = async () =>  {
+  const getInfo = async () => {
     const profileId = getCookie("profileId");
     const response = await getUserInfo(profileId);
-    if(response.request.status === 200){
+    if (response.request.status === 200) {
       setIsWriter(response.data.user.is_writer);
     }
     console.log(response);
-  }
+  };
 
   useEffect(() => {
     const loggedIn = getCookie("access_token") ? true : false;
     setIsLoggedIn(loggedIn);
-    if(loggedIn){
+    if (loggedIn) {
       getInfo();
     }
   }, []);
@@ -34,7 +34,7 @@ const HomePage = () => {
   return (
     <div className="w-full h-full flex flex-col">
       <div className="w-full h-20 sticky z-50 top-0 bg-white flex flex-row justify-between items-center whitespace-nowrap drop-shadow-[0_10px_10px_rgba(0,120,240,0.2)]">
-        <div className="w-full h-full pl-10 flex flex-row items-center gap-5">
+        <div className="w-full h-full pl-10 flex flex-row items-center gap-3">
           <img
             className="h-1/2"
             src={require("../assets/images/nmhIcon-yellow.png")}
@@ -49,28 +49,29 @@ const HomePage = () => {
           </div>
         </div>
         <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
-          { isLoggedIn ?
+          {isLoggedIn ? (
             <>
               <div
-                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
                 onClick={(e) => {
-                  isWriter ? navigate("/mailcreate") : navigate("/writerlist")
+                  isWriter ? navigate("/mailcreate") : navigate("/writerlist");
                 }}
               >
-                {isWriter ? "워크스페이스" : "마이페이지"}
+                {isWriter ? "편지 쓰기" : "마이 페이지"}
               </div>
               <div
-                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
                 onClick={(e) => {
                   signOut();
                 }}
               >
                 로그아웃
               </div>
-            </> : 
+            </>
+          ) : (
             <>
               <div
-                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
                 onClick={(e) => {
                   navigate("/signup");
                 }}
@@ -78,41 +79,37 @@ const HomePage = () => {
                 회원가입
               </div>
               <div
-                className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+                className="font-black font-PretendardRegular text-xl justify-self-end text-[#0078F080]"
                 onClick={(e) => {
                   navigate("/signin");
                 }}
               >
                 로그인
               </div>
-            </>   
-          }
-          
+            </>
+          )}
         </div>
       </div>
 
       <div className="w-full flex flex-row justify-center">
-        <Carousel autoplay={true} loop={true} className="w-full">
-          {images.map((img) => (
-            <div className="w-full h-full flex flex-row justify-center">
-              <img src={img} className="object-contain" />
-            </div>
-          ))}
-        </Carousel>
+        <img
+          className=""
+          src={require("../assets/images/homebanner3.png")}
+        ></img>
       </div>
 
-      <div className="w-full h-60 pt-16 flex flex-col items-center gap-4">
-        <p className="text-xl font-NotoSerifKR">
+      <div className="w-full h-60 pt-16 flex flex-col items-center gap-2">
+        <p className="text-[26px] font-semibold text-[#00000099] font-NotoSerifKR">
           매일 나의 메일함으로 찾아오는 편지
         </p>
-        <p className="font-extrabold text-4xl font-NotoSerifKR">
+        <p className="font-extrabold text-[46px] text-[#4ba4fd] font-NotoSerifKR">
           지금 만나볼 수 있는 타인의 내밀함
         </p>
       </div>
 
       <div className="w-full h-[420px] flex flex-row justify-center">
         <div className="w-5/6 h-full flex flex-row justify-center gap-6">
-          <div className="w-80 h-80 bg-[#FFF1BF] rounded-2xl flex flex-col justify-center items-center">
+          <div className="w-80 h-80 bg-[#FFF1BF] rounded-2xl flex flex-col justify-center items-center drop-shadow-lg">
             <div className="w-full h-70 px-4 flex flex-col justify-between gap-6">
               <div className="line-clamp-[7] font-medium font-NotoSerifKR text-base text-[#3B5266] text-justify">
                 저는 ‘친함’과 ‘편함’이 구분되는 두 개의 축이라고 생각합니다.
@@ -125,7 +122,7 @@ const HomePage = () => {
                 사람이라고 할 수 있겠네요.
               </div>
               <div className="flex flex-col justify-between items-end pr-1">
-                <div className="font-extrabold font-NPSfontBold text-[22px] text-end text-[#304659]">
+                <div className="font-extrabold font-NPSfontBold text-[24px] text-end text-[#f4c621]">
                   권혁범
                 </div>
                 <div className="font-semibold font-PretendardRegular text-end text-[#555555ee]">
@@ -135,7 +132,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="w-80 h-80 bg-[#DCECFF] rounded-2xl flex flex-col justify-center items-center">
+          <div className="w-80 h-80 bg-[#DCECFF] rounded-2xl flex flex-col justify-center items-center drop-shadow-lg">
             <div className="w-full h-70 px-4 flex flex-col justify-between gap-6">
               <div className="line-clamp-[7] font-medium font-NotoSerifKR text-base text-[#3B5266] text-justify">
                 언젠가는 지구를 떠나 새로운 생명체를 만날 수 있을까요? 어린 시절
@@ -145,7 +142,7 @@ const HomePage = () => {
                 그 책을 발견했습니다.
               </div>
               <div className="flex flex-col justify-between items-end pr-1">
-                <div className="font-extrabold font-NPSfontBold text-[22px] text-end text-[#304659]">
+                <div className="font-extrabold font-NPSfontBold text-[24px] text-end text-[#1880FA]">
                   CA피바라
                 </div>
                 <div className="font-semibold font-PretendardRegular text-end text-[#555555ee]">
@@ -155,7 +152,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="w-80 h-80 bg-[#E3DFFD] rounded-2xl flex flex-col justify-center items-center">
+          <div className="w-80 h-80 bg-[#E3DFFD] rounded-2xl flex flex-col justify-center items-center drop-shadow-lg">
             <div className="w-full h-70 px-4 flex flex-col justify-between gap-6">
               <div className="line-clamp-[7] font-medium font-NotoSerifKR text-base text-[#3B5266] text-justify">
                 어제는 S전자 지원 마감일이었다. 제출 버튼을 누르고 며칠간 못 잔
@@ -165,7 +162,7 @@ const HomePage = () => {
                 끝나지 않는 시험과도 같다.
               </div>
               <div className="flex flex-col justify-between items-end pr-1">
-                <div className="font-extrabold font-NPSfontBold text-[22px] text-end text-[#304659]">
+                <div className="font-extrabold font-NPSfontBold text-[24px] text-end text-[#9270F7]">
                   은지98
                 </div>
                 <div className="font-semibold font-PretendardRegular text-end text-[#555555ee]">
