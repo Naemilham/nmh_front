@@ -139,7 +139,7 @@ const MailCreatePage = () => {
                     </div>
                   </div>
                   <button
-                    className="w-[15%] h-[10%] bg-[#FFF1BF] shadow-xl rounded-lg border-2 border-[#F5D151D1] text-[#675013] text-xl font-bold font-NPSfontBold flex justify-center items-center self-end"
+                    className="w-[15%] h-[8%] bg-[#FFF1BF] shadow-xl rounded-lg border-2 border-[#F5D151D1] text-[#675013] text-xl font-bold font-NPSfontBold flex justify-center items-center self-end"
                     onClick={() => {
                       testSubscribe();
                     }}
