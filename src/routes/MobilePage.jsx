@@ -19,8 +19,8 @@ const MobilePage = () => {
         </div>
       </div>
       {/*body 1*/}
-      <div className="w-full h-[700px] flex flex-col justify-center items-center">
-        <div className="font-bold text-center text-xl">
+      <div className="w-full h-[700px] flex flex-col justify-center items-center gap-5">
+        <div className="font-bold text-center text-2xl">
           우리가 공유하는
           <br />
           가장 진솔한 이야기

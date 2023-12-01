@@ -1,7 +1,7 @@
 // src/apis/axios.js
 
 import axios from "axios";
-import { getCookie } from "../utils/cookie";
+import { getCookie, setCookie } from "../utils/cookie";
 import { refreshToken } from "./api";
 
 // baseURL, credential, 헤더 세팅
@@ -53,7 +53,8 @@ instanceWithToken.interceptors.response.use(
     if (error.response.status === 401) {
       //토큰이 만료됨에 따른 에러인지 확인
       const token = getCookie("refresh_token");
-      await refreshToken(token); //refresh token 을 활용하여 access token 을 refresh
+      const refreshToken = await refreshToken(token); //refresh token 을 활용하여 access token 을 refresh
+      setCookie("refresh_token", refreshToken);
 
       return instanceWithToken(originalRequest); //refresh된 access token 을 활용하여 재요청 보내기
     }
