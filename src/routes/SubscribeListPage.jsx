@@ -5,7 +5,6 @@ const MailCreatePage = () => {
   const navigate = useNavigate();
 
   const colors = ["#FFF1BF", "#DCECFF", "#E3DFFD"];
-  const borderColors = ["#F5D151D1", "#0078F0", "#932ED0D1"];
 
   const [showModal, setShowModal] = useState(false);
   const [subscribeInfo, setSubscribeInfo] = useState([
@@ -33,20 +32,20 @@ const MailCreatePage = () => {
             />
             <div className="flex items-end">
               <div
-                className="font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080]"
+                className="font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080] cursor-pointer"
                 onClick={(e) => {
                   navigate("/");
                 }}
               >
                 내밀함
               </div>
-              <div className="text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
+              <div className="cursor-default text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
                 우리가 공유하는 가장 진솔한 이야기
               </div>
             </div>
           </div>
           <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
-            <div className="font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]">
+            <div className="cursor-pointer font-black font-PretendardRegular text-lg justify-self-end text-[#0078F080]">
               로그아웃
             </div>
           </div>
@@ -57,9 +56,9 @@ const MailCreatePage = () => {
           {/*tag*/}
           <div className="flex flex-col justify-end">
             <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
-              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2 cursor-pointer"></div>
               <div
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                className="w-12 h-28 cursor-pointer border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
                 onClick={(e) => {
                   navigate("/writerlist");
                 }}
@@ -68,15 +67,15 @@ const MailCreatePage = () => {
               </div>
             </div>
             <div className="flex flex-col mb-6">
-              <div class="w-15 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-1.5"></div>
-              <div className="w-15 h-28 border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5">
+              <div class="w-15 h-[23px] cursor-pointer bg-[#4694F0] drop-shadow-md translate-x-1.5"></div>
+              <div className="w-15 h-28 cursor-pointer border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5">
                 나의 작가
               </div>
             </div>
             <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
-              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+              <div class="w-12 h-[23px] cursor-pointer bg-[#7B8086] drop-shadow-md translate-x-2"></div>
               <div
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                className="w-12 h-28 border cursor-pointer bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
                 onClick={() => {
                   window.alert("추후 제공될 기능입니다.");
                 }}
@@ -87,7 +86,7 @@ const MailCreatePage = () => {
           </div>
           {/*content*/}
           <div className="bg-white text-black w-3/4 h-5/6 flex flex-col justify-center items-center rounded-lg drop-shadow-xl gap-5">
-            {showModal ? (
+            {/* {showModal ? (
               <>
                 <div className="w-5/6 h-full flex flex-col justify-center items-center gap-5">
                   <div className="w-full h-[25%] bg-gray-300 rounded-2xl border-2 border-[#F5D151D1] relative">
@@ -158,55 +157,51 @@ const MailCreatePage = () => {
                 </button>
               </>
             ) : (
-              <>
-                <div className="w-11/12 h-12 bg-gray-200 rounded-lg text-[#5C5C5C] text-lg font-semibold font-PretendardRegular flex justify-center items-center">
-                  구독 중인 보내는 이들의 목록을 확인하고, 구독 상태를 변경할 수
-                  있어요.
-                </div>
-                <div className="w-[90%] h-[480px] pb-8 overflow-y-scroll grid grid-cols-3 auto-rows-[90%] place-items-center gap-y-10">
-                  {subscribeInfo.map((info, idx) => (
-                    <div className="w-[90%] h-full bg-white rounded-xl drop-shadow-xl">
-                      <div
-                        className={`w-full h-3/5 rounded-t-xl bg-[${
-                          colors[idx % 3]
-                        }] flex justify-center items-center`}
-                      >
-                        <img className="h-4/5" src={info.image} />
-                      </div>
-                      <div className="w-full h-2/5 flex flex-col justify-center px-3">
-                        <div className="line-clamp-1 ml-1 text-[#000000aa] text-2xl font-black font-NPSfontBold">
-                          {info.name}
-                        </div>
-                        <div className="line-clamp-1 text-[#00000099] text-lg">
-                          {info.description}
-                        </div>
-                        <div className="flex justify-between mt-4 mx-1">
-                          <img
-                            className="drop-shadow-sm"
-                            src={require("../assets/images/unsubscribe.png")}
-                            onClick={() => {
-                              alert("구독이 취소되었습니다.");
-                            }}
-                          />
-                          <button
-                            className={`w-2/5 h-14 bg-[${
-                              colors[idx % 3]
-                            }] rounded-xl border-2 border-[${
-                              borderColors[idx % 3]
-                            }] self-end text-lg text-[#00000099] font-bold`}
-                            onClick={() => {
-                              setShowModal(true);
-                            }}
-                          >
-                            더 알아보기
-                          </button>
-                        </div>
-                      </div>
+              <> */}
+            <div className="w-11/12 h-12 cursor-default bg-gray-200 rounded-lg text-[#5C5C5C] text-lg font-semibold font-PretendardRegular flex justify-center items-center">
+              구독 중인 보내는 이들의 목록을 확인하고, 구독 상태를 변경할 수
+              있어요.
+            </div>
+            <div className="w-[90%] h-[480px] pb-8 overflow-y-scroll grid grid-cols-3 auto-rows-[90%] place-items-center gap-y-10">
+              {subscribeInfo.map((info, idx) => (
+                <div className="w-[90%] h-full bg-white rounded-xl drop-shadow-xl">
+                  <div
+                    className={`w-full h-3/5 rounded-t-xl bg-[${
+                      colors[idx % 3]
+                    }] flex justify-center items-center`}
+                  >
+                    <img className="h-4/5" src={info.image} />
+                  </div>
+                  <div className="w-full h-2/5 flex flex-col justify-center px-3">
+                    <div className="line-clamp-1 ml-1 text-[#000000aa] text-2xl font-black font-NPSfontBold">
+                      {info.name}
                     </div>
-                  ))}
+                    <div className="line-clamp-1 text-[#00000099] text-lg">
+                      {info.description}
+                    </div>
+                    <div className="flex justify-between mt-4 mx-1">
+                      <img
+                        className="drop-shadow-sm cursor-pointer"
+                        src={require("../assets/images/unsubscribe.png")}
+                        onClick={() => {
+                          alert("구독이 취소되었습니다.");
+                        }}
+                      />
+                      <button
+                        className={`w-2/5 h-14 bg-[${
+                          colors[idx % 3]
+                        }] rounded-xl self-end text-lg text-[#00000099] font-bold`}
+                        onClick={() => {
+                          setShowModal(true);
+                        }}
+                      >
+                        더 알아보기
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </>
-            )}
+              ))}
+            </div>
           </div>
         </div>
       </div>

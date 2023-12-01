@@ -40,22 +40,22 @@ const MailCreatePage = () => {
             />
             <div className="flex items-end">
               <div
-                className="font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080]"
+                className="curser-pointer font-extrabold text-4xl drop-shadow-sm ml-2 font-KimjungchulMyungjoBold text-[#0078F080]"
                 onClick={(e) => {
                   navigate("/");
                 }}
               >
                 내밀함
               </div>
-              <div className="text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
+              <div className="cursor-default text-lg font-semibold font-NotoSerifKR ml-2 text-[#00000099]">
                 우리가 공유하는 가장 진솔한 이야기
               </div>
             </div>
           </div>
           <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
-            <div 
-              className="font-extrabold font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
-              onClick={()=>signOut()}
+            <div
+              className="font-extrabold curser-pointer font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+              onClick={() => signOut()}
             >
               로그아웃
             </div>
@@ -67,15 +67,15 @@ const MailCreatePage = () => {
           {/*sidebar*/}
           <div className="flex flex-col justify-end">
             <div className="flex flex-col mb-6">
-              <div class="w-15 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-1.5"></div>
-              <div className="w-15 h-28 border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5">
+              <div class="w-15 h-[23px]  bg-[#4694F0] drop-shadow-md translate-x-1.5 curser-pointer"></div>
+              <div className="w-15 h-28 curser-pointer border bg-white vertical-text text-center text-lg font-NPSfontBold font-black pl-2 text-[#4694F0] drop-shadow-lg translate-x-1.5">
                 편지 쓰기
               </div>
             </div>
-            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
-              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2 curser-pointer">
+              <div class="w-12 h-[23px] curser-pointer bg-[#7B8086] drop-shadow-md translate-x-2"></div>
               <div
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                className="w-12 h-28 border curser-pointer bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
                 onClick={() => {
                   window.alert("추후 제공될 기능입니다.");
                 }}
@@ -83,10 +83,10 @@ const MailCreatePage = () => {
                 기억 상자
               </div>
             </div>
-            <div className="flex flex-col ml-2 mb-6 hover:-translate-x-2">
-              <div class="w-12 h-[23px]  bg-[#7B8086] drop-shadow-md translate-x-2"></div>
+            <div className="flex flex-col curser-pointer ml-2 mb-6 hover:-translate-x-2">
+              <div class="w-12 h-[23px] curser-pointer bg-[#7B8086] drop-shadow-md translate-x-2"></div>
               <div
-                className="w-12 h-28 border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
+                className="w-12 h-28 curser-pointer border bg-white vertical-text text-center text-lg font-extrabold font-NPSfontBold pl-2 text-[#7B8086] drop-shadow-md translate-x-2"
                 onClick={() => {
                   window.alert("추후 제공될 기능입니다.");
                 }}
