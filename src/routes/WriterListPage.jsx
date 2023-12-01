@@ -143,7 +143,7 @@ const MailCreatePage = () => {
                       <div className="w-[30%] h-[15%] cursor-default bg-[#FFF1BF] rounded-lg border-2 border-[#F5D151D1] text-[#675013] text-xl font-NPSfontBold font-bold flex justify-center items-center">
                         샘플 메일링
                       </div>
-                      <div className="w-full h-[70%] text-[#7C5C0B] font-NotoSerifKR text-[16px]">
+                      <div className="w-full h-[70%] text-[#7C5C0B] font-NotoSerifKR text-[16px] line-clamp-[9]">
                         {modalData.example}
                       </div>
                     </div>
@@ -187,7 +187,7 @@ const MailCreatePage = () => {
                         <div className="line-clamp-1 ml-1 text-[#000000aa] text-2xl font-black font-NPSfontBold">
                           {info.user.nickname}
                         </div>
-                        <div className="line-clamp-1 ml-1 text-[#00000099] text-xl font-[500] font-PretendardRegular">
+                        <div className="line-clamp-1 ml-1 text-[#00000099] text-[19px] font-[500] font-PretendardRegular">
                           {info.self_introduction}
                         </div>
                         <button
