@@ -17,7 +17,7 @@ const MobilePage = () => {
               className="h-1/2 drop-shadow-lg"
               src={require("../assets/images/nmhIcon-yellow.png")}
             />
-            <div className="font-[1000] text-4xl drop-shadow-sm font-NotoSerifKR text-[#0078F080]">
+            <div className="font-[1000] text-4xl drop-shadow-sm font-KimjungchulMyungjoBold text-[#0078F080]">
               내밀함
             </div>
           </div>
@@ -72,7 +72,7 @@ const MobilePage = () => {
               <br />
               전송할지 고민하면서 창작자의 눈 이외에도
               <br />
-              기획자, 편집자, 디자이너 등의 시선으로 작품을 볼 수 있었어요.
+              기획자, 편집자, 디자이너 등의 시선으로 작품을 볼 수 있었어요."
             </div>
             <div className="text-right text-black text-[12px] font-medium font-PretendardRegular">
               - 차도하, '목소리' 메일링 서비스 운영{" "}
@@ -103,7 +103,7 @@ const MobilePage = () => {
             <div className=" text-black text-center text-sm font-medium font-PretendardRegular">
               "아침마다 나를 위해서 메일 앱이 알림을 울려주는 게 좋다. <br />
               괜히 작가와 더 가까워진 것 같은 기분이 드는 것이 <br />
-              책과의 차이점이라고 생각한다.""
+              책과의 차이점이라고 생각한다."
             </div>
             <div className="text-right text-black text-[12px] font-medium font-PretendardRegular">
               - 박진성, 메일링 서비스 애용자{" "}
