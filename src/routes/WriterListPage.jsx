@@ -11,7 +11,7 @@ const MailCreatePage = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState([]);
-  const img = require("../assets/images/profilePhoto1.png");
+  const [profileImage, setProfileImage] = useState("");
   const [writerInfo, setWriterInfo] = useState([]);
 
   const testSubscribe = async () => {
@@ -26,6 +26,17 @@ const MailCreatePage = () => {
     else{
       alert(response.response.data.non_field_errors);
     } 
+  }
+
+  const profileMap = {
+    "아름드리25": require("../assets/images/profile_Arumduri.png"),
+    "오카리나": require("../assets/images/profile_Ocarina.png"),
+    "체리마루": require("../assets/images/profile_Cherry.png"),
+    "포와로36": require("../assets/images/profile_Powaro.png"),
+    "덜어린왕자": require("../assets/images/profile_Little Prince.png"),
+    "낭만고양이": require("../assets/images/profile_NangmanCat.png"),
+    "판교굼벵이": require("../assets/images/profile_Pangyo.png"),
+    "하주봉": require("../assets/images/profile_Hajubong.png"),
   }
 
   const getWriterData = async () => {
@@ -116,7 +127,7 @@ const MailCreatePage = () => {
                       {modalData.user.nickname}
                     </div>
                     <img
-                      src={require("../assets/images/hyukbeom.jpg")}
+                      src={profileImage}
                       className="w-[18%] aspect-square rounded-full border-2 border-[#F5D151EB] absolute right-[5%] -bottom-[50%]"
                     />
                   </div>
@@ -168,7 +179,7 @@ const MailCreatePage = () => {
                           colors[idx % 3]
                         }] flex justify-center items-center`}
                       >
-                        <img className="h-4/5" src={img} />
+                        <img className="h-4/5 rounded-full" src={profileMap[info.user.nickname]} />
                       </div>
                       <div className="w-full h-2/5 flex flex-col justify-center px-3">
                         <div className="line-clamp-1 ml-1 text-[#000000aa] text-2xl font-black font-NPSfontBold">
@@ -184,6 +195,7 @@ const MailCreatePage = () => {
                             borderColors[idx % 3]
                           }] self-end text-lg text-[#00000099] font-NPSfontBold font-extrabold hover:text-[#52565a]`}
                           onClick={() => {
+                            setProfileImage(profileMap[info.user.nickname]);
                             setModalData(info);
                             setShowModal(true);
                           }}
