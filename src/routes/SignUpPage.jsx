@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp, sendVerificationEmail, verifyEmail } from "../apis/api";
+import { setCookie } from "../utils/cookie";
 
 const SignUpPage = () => {
   const emailRegEx =
@@ -48,8 +49,18 @@ const SignUpPage = () => {
         "email": email,
         "nickname": nickName,
         "is_writer": isWriter,
+        "is_reader": !isWriter,
       });
       if(response.request.status == 201){
+        const accessToken = response.data.access;
+        const refreshToken = response.data.refresh;
+        const userId = response.data.user.id;
+        const profileId = response.data.user.profile_id;
+        setCookie("userId", userId);
+        setCookie("profileId", profileId);
+        setCookie("access_token", accessToken);
+        setCookie("refresh_token", refreshToken);
+
         alert("회원가입을 완료했습니다.");
         navigate("/");
       }
@@ -239,7 +250,7 @@ const SignUpPage = () => {
                   type="radio"
                   name="role"
                   value="받는 이"
-                  checked
+                  checked={!isWriter}
                   onClick={() => setIsWriter(false)}
                 />
                 <span className="font-PretendardRegular text-sm font-bold text-[#00000099] drop-shadow-md">
@@ -251,6 +262,7 @@ const SignUpPage = () => {
                   type="radio"
                   name="role"
                   value="보내는 이"
+                  checked={isWriter}
                   onClick={() => setIsWriter(true)}
                 />
                 <span className="font-PretendardRegular text-sm font-bold text-[#00000099] drop-shadow-md">

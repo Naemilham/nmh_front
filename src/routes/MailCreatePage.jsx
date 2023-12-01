@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { saveEmail, sendEmail } from "../apis/api";
+import { saveEmail, sendEmail, signOut } from "../apis/api";
 
 const MailCreatePage = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const MailCreatePage = () => {
 
   const send = async () => {
     const response = await sendEmail({
-      email_id: 3,
+      email_id: emailId,
     });
     console.log(response);
   };
@@ -53,7 +53,10 @@ const MailCreatePage = () => {
             </div>
           </div>
           <div className="w-max h-full pr-10 flex flex-row items-center gap-5">
-            <div className="font-extrabold font-PretendardRegular text-lg justify-self-end text-[#0078F080]">
+            <div 
+              className="font-extrabold font-PretendardRegular text-lg justify-self-end text-[#0078F080]"
+              onClick={()=>signOut()}
+            >
               로그아웃
             </div>
           </div>

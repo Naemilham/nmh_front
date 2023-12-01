@@ -14,19 +14,24 @@ const SignInPage = () => {
       username: id,
       password: pw,
     });
-
+    console.log(response);
     if(response.request.status == 200){
       const accessToken = response.data.access;
       const refreshToken = response.data.refresh;
       const isWriter = response.data.user.is_writer;
       const isReader = response.data.user.is_reader;
+      const userId = response.data.user.id;
+      const profileId = response.data.user.profile_id;
+      setCookie("userId", userId);
+      setCookie("profileId", profileId);
       setCookie("access_token", accessToken);
       setCookie("refresh_token", refreshToken);
+
       if(isWriter){
-        navigate("/writerlist");
+        navigate("/mailcreate");
       }
       if(isReader){
-        navigate("/mailcreate");
+        navigate("/writerlist");
       }
     }
     else{
