@@ -8,10 +8,10 @@ const MobilePage = () => {
     require("../assets/images/carousel2.png"),
   ];
   return (
-    <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2]">
+    <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2] relative">
       {/*header*/}
-      <div className="flex flex-row justify-center sticky top-0">
-        <div className="w-full h-20 sticky z-50 top-0 bg-white flex rounded-b-lg drop-shadow-[0_10px_10px_rgba(0,120,240,0.2)]">
+      <div className="flex flex-row justify-center fixed-header">
+        <div className="w-full h-20 bg-white flex rounded-b-lg drop-shadow-[0_10px_10px_rgba(0,120,240,0.2)]">
           <div className="w-full h-full flex items-center justify-center gap-4">
             <img
               className="h-1/2 drop-shadow-lg"
@@ -24,7 +24,7 @@ const MobilePage = () => {
         </div>
       </div>
       {/*body 1*/}
-      <div className="w-full h-[740px] bg-[#FFF1BF] bg-opacity-70 p-4 flex flex-col justify-center items-center gap-4">
+      <div className="w-full h-[740px] bg-[#FFF1BF] bg-opacity-70 mt-10 pb-5 px-4 flex flex-col justify-center items-center gap-4">
         <div className="font-extrabold text-[#F2BF00] mt-4 text-center text-4xl font-PretendardRegular">
           우리가 공유하는
           <br />
