@@ -12,12 +12,12 @@ const MobilePage = () => {
       {/*header*/}
       <div className="flex flex-row justify-center fixed-header">
         <div className="w-full h-20 bg-white flex drop-shadow-[0_8px_8px_rgba(0,120,240,0.2)]">
-          <div className="w-full h-full flex items-center justify-center gap-2">
+          <div className="w-full h-full flex items-center justify-center gap-3">
             <img
               className="h-1/2 drop-shadow-lg"
               src={require("../assets/images/nmhIcon-yellow.png")}
             />
-            <div className="font-extrabold text-4xl drop-shadow-md font-KimjungchulMyungjoBold text-[#0078F080]">
+            <div className="font-[1000] text-4xl drop-shadow-sm font-NotoSerifKR text-[#0078F080]">
               내밀함
             </div>
           </div>
@@ -25,7 +25,7 @@ const MobilePage = () => {
       </div>
       {/*body 1*/}
       <div className="w-full h-auto bg-[#FFF1BF] bg-opacity-70 mt-20 py-5 px-4 flex flex-col justify-center items-center gap-5">
-        <div className="font-[900] text-[#F2BF00] mt-4 text-center text-4xl font-NPSfontBold">
+        <div className="font-[1000] text-[#F2BF00] mt-4 text-center text-[40px]/[50px] font-NPSfontBold">
           우리가 공유하는
           <br />
           가장 진솔한 이야기
@@ -41,8 +41,8 @@ const MobilePage = () => {
           프라이빗한 소통을 원하는 독자를 연결해주는 <br />
           메일링 서비스 플랫폼이에요.
         </div>
-        <div className="w-[300px] h-40 bg-gray-50 bg-opacity-70 rounded-[10px] flex flex-col items-center justify-center">
-          <div className="text-center text-base justify-center font-bold font-NPSfontBold">
+        <div className="w-[300px] h-44 bg-gray-50 bg-opacity-70 rounded-[10px] mb-4 flex flex-col items-center justify-center gap-2">
+          <div className="text-center text-[18px] text-[#ffc801] justify-center font-bold font-NPSfontBold">
             메일링 서비스란?
           </div>
           <div className="text-center text-sm justify-center font-medium font-PretendardRegular">
@@ -58,12 +58,12 @@ const MobilePage = () => {
       </div>
 
       {/*body 2*/}
-      <div className="w-full h-auto bg-[#DCECFF] bg-opacity-80 flex flex-col p-4 justify-center items-center gap-4">
+      <div className="w-full h-auto bg-[#DCECFF] bg-opacity-80 flex flex-col px-4 py-5 justify-center items-center gap-4">
         <div className="  text-blue-400 text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
           왜 메일링인가요?
         </div>
-        <div className="flex flex-col gap-3">
-          <div className=" text-black text-center text-xl font-bold font-NPSfontBold">
+        <div className="flex flex-col gap-2">
+          <div className=" text-[#1880FA] text-center text-xl font-bold font-NPSfontBold">
             #행복한고민 #소통 #능동성
           </div>
           <div className="flex flex-col gap-1">
@@ -74,13 +74,13 @@ const MobilePage = () => {
               <br />
               기획자, 편집자, 디자이너 등의 시선으로 작품을 볼 수 있었어요.
             </div>
-            <div className="text-right text-black text-[11px] font-medium font-PretendardRegular">
-              - 차도하 시인, '목소리' 메일링 서비스 운영{" "}
+            <div className="text-right text-black text-[12px] font-medium font-PretendardRegular">
+              - 차도하, '목소리' 메일링 서비스 운영{" "}
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-3 mt-2">
-          <div className=" text-black text-center text-xl font-bold font-NPSfontBold">
+        <div className="flex flex-col gap-2 mt-2">
+          <div className=" text-[#1880FA] text-center text-xl font-bold font-NPSfontBold">
             #편리함 #선택권 #자유도
           </div>
           <div className="flex flex-col gap-1">
@@ -90,13 +90,13 @@ const MobilePage = () => {
               자신이 정보의 타임라인과 페이지 등을 <br />
               자유자재로 구성할 수 있다는 것이 매력적이예요”
             </div>
-            <div className="text-right text-black text-[11px] font-medium font-PretendardRegular">
+            <div className="text-right text-black text-[12px] font-medium font-PretendardRegular">
               - 이융희, 문화연구자{" "}
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-3 mt-2">
-          <div className=" text-black text-center text-xl font-bold font-NPSfontBold">
+        <div className="flex flex-col gap-2 mt-2 mb-4">
+          <div className=" text-[#1880FA] text-center text-xl font-bold font-NPSfontBold">
             #작은습관 #친근함 #새로움
           </div>
           <div className="flex flex-col gap-1">
@@ -105,7 +105,7 @@ const MobilePage = () => {
               괜히 작가와 더 가까워진 것 같은 기분이 드는 것이 <br />
               책과의 차이점이라고 생각한다.""
             </div>
-            <div className="text-right text-black text-[11px] font-medium font-PretendardRegular">
+            <div className="text-right text-black text-[12px] font-medium font-PretendardRegular">
               - 박진성, 메일링 서비스 애용자{" "}
             </div>
           </div>
@@ -113,66 +113,73 @@ const MobilePage = () => {
       </div>
 
       {/*body 3*/}
-      <div className="w-full h-auto bg-[#E3DFFD] bg-opacity-70 flex flex-col p-4 justify-center items-center gap-4">
+      <div className="w-full h-auto bg-[#E3DFFD] bg-opacity-70 flex flex-col px-4 py-5 justify-center items-center gap-4">
         <div className="  text-[#9270F7] text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
           왜 내밀함인가요?
         </div>
 
-        <div className="flex flex-col gap-3">
-          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg">
-            <div className="text-center text-violet-400 text-[45px] font-bold font-PretendardRegular">
-              1
+        <div className="flex flex-col gap-4">
+          <div className="w-[314px] h-[220px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg gap-2">
+            <div className="flex flex-col">
+              <div className="text-center text-violet-400 text-[36px] font-bold font-NPSfontBold">
+                1
+              </div>
+              <div className="text-center text-violet-400 text-[26px] font-bold font-NPSfontBold">
+                메일링 운영을 편리하게!
+              </div>
             </div>
-            <div className="text-center text-violet-400 text-[26px] font-bold font-NPSfontBold">
-              메일링 운영을 편리하게!
-            </div>
-            <div className="text-center text-black text-[13px] font-medium font-PretendardRegular">
+            <div className="text-center text-black text-[15px] font-medium font-PretendardRegular">
               작가님은 창작에만 집중하세요! <br />
               메일 전송과 구독자 관리, 결제 확인 등의
               <br />
               번거로움을 내밀함이 덜어드려요.
               <br />
-              글쓰기의 즐거움을 내밀함과 함께 되찾으세요.
+              내밀함과 함께 글쓰기의 즐거움을 되찾으세요.
             </div>
           </div>
-          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg">
-            <div className="text-center text-violet-400 text-[45px] font-bold font-PretendardRegular">
-              2
+          <div className="w-[314px] h-[220px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg gap-2 ">
+            <div className="flex flex-col">
+              <div className="text-center text-violet-400 text-[36px] font-bold font-NPSfontBold">
+                2
+              </div>
+              <div className="text-center text-violet-400 text-[26px] font-bold font-NPSfontBold">
+                작가 탐색을 한 곳에서!
+              </div>
             </div>
-            <div className="text-center text-violet-400 text-[26px] font-bold font-NPSfontBold">
-              작가 탐색을 한 곳에서!
-            </div>
-            <div className="text-center text-black text-[13px] font-medium font-PretendardRegular">
-              새로운 메일링을 구독해보고 싶으셨나요?
+            <div className="text-center text-black text-[15px] font-[500] font-PretendardRegular">
+              새로운 메일링을 구독해보고 싶었지만
               <br />
-              블로그, 인스타그램, 네이버 스토어 등을 <br />
-              돌아다니는 대신
+              취향에 맞는 작가님을 찾기가 어려우셨나요?
               <br />
-              내일함에서 나의 최애 작가님을 찾아보세요.
+              인스타그램과 블로그를 하염없이 서치하는 대신
+              <br />
+              내일함에서 여러분의 최애 작가님을 찾아보세요.
             </div>
           </div>
-          <div className="w-[301px] h-[215px] bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg">
-            <div className="text-center text-violet-400 text-[45px] font-bold font-PretendardRegular ">
-              3
+          <div className="w-[314px] h-[220px] mb-4 bg-white rounded-[20px] flex flex-col items-center justify-center drop-shadow-lg gap-2">
+            <div className="flex flex-col">
+              <div className="text-center text-violet-400 text-[36px] font-bold font-NPSfontBold">
+                3
+              </div>
+              <div className="text-center text-violet-400 text-[26px] font-bold font-NPSfontBold">
+                구독 관리를 간단하게!
+              </div>
             </div>
-            <div className="text-center text-violet-400 text-[26px] font-bold font-NPSfontBold">
-              구독 관리를 간단하게!
-            </div>
-            <div className="text-center text-black text-[13px] font-medium font-PretendardRegular">
+            <div className="text-center text-black text-[15px] font-medium font-PretendardRegular">
               취소하고 싶은 구독이 있지만
               <br />
               작가님 눈치가 보여 유지하고 계신가요?
               <br />
-              여러 메일링의 구독료를 한 번에 결제하고 싶으신가요?
+              여러 구독료를 한 번에 결제하고 싶으신가요?
               <br />
-              내밀함으로 메일링의 즐거움을 더욱 온전히 즐기세요.
+              내밀함으로 메일링의 즐거움만을 온전히 즐기세요.
             </div>
           </div>
         </div>
       </div>
       {/*body 4*/}
-      <div className="w-full h-[860px] bg-[#FFFFFF] bg-opacity-70 flex flex-col p-4 justify-center items-center gap-4">
-        <div className="  text-black text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
+      <div className="w-full h-[860px] bg-[#FFFFFF] bg-opacity-70 flex flex-col px-4 py-5 justify-center items-center gap-4">
+        <div className="  text-black text-opacity-80 text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
           지금 내밀함에서는!
         </div>
         <div className="w-full flex flex-row justify-center">
