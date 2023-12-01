@@ -22,6 +22,7 @@ module.exports = {
       DovemayoMedium: ["Dovemayo-Medium"],
       NPSfontBold: ["NPSfontBold"],
       KimjungchulMyungjoBold: ["KimjungchulMyungjo-Bold"],
+      GmarketSansMedium: ["GmarketSansMedium"],
     },
   },
   plugins: [],
