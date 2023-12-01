@@ -13,7 +13,7 @@ import SubScribeManagePage from "./routes/SubscribeManagePage";
 import ApiTest from "./routes/ApiTest";
 import WriterListPage from "./routes/WriterListPage";
 import SubscribeListPage from "./routes/SubscribeListPage";
-import MobilePage from "./MobilePage";
+import MobilePage from "./routes/MobilePage";
 
 function App() {
   return (
