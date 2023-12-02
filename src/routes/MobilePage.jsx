@@ -4,8 +4,8 @@ import { Carousel } from "@material-tailwind/react";
 
 const MobilePage = () => {
   const images = [
-    require("../assets/images/carousel1.png"),
-    require("../assets/images/carousel2.png"),
+    require("../assets/images/001.png"),
+    require("../assets/images/002.png"),
   ];
   return (
     <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2] relative">
