@@ -181,7 +181,7 @@ const MobilePage = () => {
         </div>
       </div>
       {/*body 4*/}
-      <div className="w-full h-[860px] bg-[#FFFFFF] bg-opacity-70 flex flex-col px-4 py-5 justify-center items-center gap-4">
+      <div className="w-full h-auto bg-[#FFFFFF] bg-opacity-70 flex flex-col px-4 py-5 justify-center items-center gap-4">
         <div className="  text-black text-opacity-80 text-center text-4xl mt-6 mb-4 font-[900] font-NPSfontBold">
           지금 내밀함에서는!
         </div>
