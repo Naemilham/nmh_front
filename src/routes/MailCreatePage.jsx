@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveEmail, sendEmail, signOut } from "../apis/api";
+import { getCookie } from "../utils/cookie";
 
 const MailCreatePage = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const MailCreatePage = () => {
     const response = await saveEmail({
       subject: title,
       message: content,
-      writer: 1,
+      writer: getCookie("profileId"),
     });
     setEmailId(response.data.id);
     console.log(response);
