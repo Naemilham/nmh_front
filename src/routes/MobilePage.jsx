@@ -6,6 +6,9 @@ const MobilePage = () => {
   const images = [
     require("../assets/images/001.png"),
     require("../assets/images/002.png"),
+    require("../assets/images/003.png"),
+    require("../assets/images/004.png"),
+    require("../assets/images/005.png"),
   ];
   return (
     <div className="w-screen h-screen flex flex-col bg-gradient-to-b from-[#ECF2FF] to-[#FFF4D2] relative">
@@ -36,9 +39,9 @@ const MobilePage = () => {
         />
 
         <div className="text-[17px] text-center font-[500] font-PretendardRegular ">
-          내밀함은 좀 더 많은 독자에게 닿고 싶어하는 작가와
+          내밀함은 더욱 많은 독자에게 닿고 싶은 작가와
           <br />
-          좀 더 친근한 에세이를 읽고 싶은 독자를 연결해주는 <br />
+          더욱 친근한 에세이를 원하는 독자를 연결해주는 <br />
           메일링 서비스 플랫폼이에요.
         </div>
         <div className="w-[300px] h-44 bg-gray-50 bg-opacity-70 rounded-[10px] mb-4 flex flex-col items-center justify-center gap-2">
@@ -128,7 +131,7 @@ const MobilePage = () => {
                 메일링 운영을 편리하게!
               </div>
             </div>
-            <div className="text-center text-black text-[15px] font-medium font-PretendardRegular">
+            <div className="text-center text-black text-[14.5px] font-medium font-PretendardRegular">
               작가님은 창작에만 집중하세요! <br />
               메일 전송과 구독자 관리, 결제 확인 등의
               <br />
@@ -146,7 +149,7 @@ const MobilePage = () => {
                 작가 탐색을 한 곳에서!
               </div>
             </div>
-            <div className="text-center text-black text-[15px] font-[500] font-PretendardRegular">
+            <div className="text-center text-black text-[14.5px] font-[500] font-PretendardRegular">
               새로운 메일링을 구독해보고 싶었지만
               <br />
               취향에 맞는 작가님을 찾기가 어려우셨나요?
@@ -165,7 +168,7 @@ const MobilePage = () => {
                 구독 관리를 간단하게!
               </div>
             </div>
-            <div className="text-center text-black text-[15px] font-medium font-PretendardRegular">
+            <div className="text-center text-black text-[14.5px] font-medium font-PretendardRegular">
               취소하고 싶은 구독이 있지만
               <br />
               작가님 눈치가 보여 유지하고 계신가요?
@@ -191,7 +194,7 @@ const MobilePage = () => {
             ))}
           </Carousel>
         </div>
-        <div className="gap-1">
+        <div className="mt-2 gap-1">
           <div className="text-center text-black text-opacity-80 text-[17px] font-semibold mb-1 font-PretendardRegular">
             ▶ 내밀함 서비스를 체험해보고 싶으신가요?
           </div>
